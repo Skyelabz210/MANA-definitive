@@ -1,20 +1,35 @@
-[package]
-name = "qmnf-security-analysis"
+[workspace]
+members = ["crates/*"]
+resolver = "2"
+
+[workspace.package]
 version = "0.1.0"
 edition = "2021"
-description = "Cryptanalysis toolkit for QMNF/MANA FHE - breaking our own encryption"
+authors = ["Acidlabz210 <acid@hackfate.us>"]
 
-[dependencies]
-# No external dependencies - we implement everything ourselves for verifiability
+[workspace.dependencies]
+# SIMD acceleration
+wide = "0.7"              # Portable SIMD (stable Rust)
 
-[[bin]]
-name = "attack-estimator"
-path = "src/main.rs"
+# Parallelism
+rayon = "1.10"            # Data parallelism
 
-[[bin]]
-name = "k-elimination-attack"
-path = "src/k_elimination_attack.rs"
+# Crypto (from NINE65)
+zeroize = { version = "1.7", features = ["derive"] }
+getrandom = "0.2"
+subtle = "2.5"
+sha2 = "0.10"
 
-[[bin]]
-name = "lattice-attack"
-path = "src/lattice_attack.rs"
+# Dev
+criterion = "0.5"
+proptest = "1.4"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+
+[profile.bench]
+opt-level = 3
+lto = "fat"

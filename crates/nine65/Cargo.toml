@@ -1,0 +1,34 @@
+[package]
+name = "nine65"
+description = "QMNF-Accelerated BFV FHE with AHOP Quantum Simulation"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+
+[features]
+default = ["ntt_fft", "accelerated", "parallel"]
+secure-keygen = []
+ntt_fft = []
+wassan = []
+v2 = ["ntt_fft", "wassan"]
+accelerated = ["mana", "unhal"]
+parallel = ["rayon"]
+secure_seed = []
+debug_dual_mul = []
+
+[dependencies]
+mana = { path = "../mana", optional = true }
+unhal = { path = "../unhal", optional = true }
+rayon = { workspace = true, optional = true }
+zeroize = { workspace = true }
+getrandom = { workspace = true }
+subtle = { workspace = true }
+sha2 = { workspace = true }
+
+[dev-dependencies]
+criterion = { workspace = true }
+proptest = { workspace = true }
+
+[[bench]]
+name = "fhe_scaling"
+harness = false
