@@ -1,0 +1,138 @@
+DIGEST d34c983d7ff0f222f79fef821d75c498
+FCyclotomicPhase
+R175:179 Coq.Arith.Arith <> <> lib
+R197:199 Coq.micromega.Lia <> <> lib
+R217:219 Coq.Init.Nat <> <> lib
+rec 588:601 <> CyclotomicRing
+proj 610:615 <> ring_n
+proj 626:631 <> ring_q
+R619:621 Coq.Init.Datatypes <> nat ind
+R635:637 Coq.Init.Datatypes <> nat ind
+def 655:669 <> ring_wellformed
+R679:692 CyclotomicPhase <> CyclotomicRing rec
+binder 672:675 <> ring:4
+R724:727 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R720:722 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R713:718 CyclotomicPhase <> ring_n proj
+R707:710 CyclotomicPhase <> ring:4 var
+R741:743 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R734:739 CyclotomicPhase <> ring_q proj
+R728:731 CyclotomicPhase <> ring:4 var
+def 838:855 <> cosine_coeff_count
+R862:864 Coq.Init.Datatypes <> nat ind
+binder 858:858 <> n:5
+R869:871 Coq.Init.Datatypes <> nat ind
+R876:876 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R882:885 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R878:880 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R877:877 CyclotomicPhase <> n:5 var
+def 942:957 <> sine_coeff_count
+R964:966 Coq.Init.Datatypes <> nat ind
+binder 960:960 <> n:6
+R971:973 Coq.Init.Datatypes <> nat ind
+R979:981 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R978:978 CyclotomicPhase <> n:6 var
+prf 1034:1052 <> extraction_complete
+R1067:1069 Coq.Init.Datatypes <> nat ind
+binder 1063:1063 <> n:7
+R1115:1117 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1094:1096 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1074:1091 CyclotomicPhase <> cosine_coeff_count def
+R1093:1093 CyclotomicPhase <> n:7 var
+R1097:1112 CyclotomicPhase <> sine_coeff_count def
+R1114:1114 CyclotomicPhase <> n:7 var
+R1118:1118 CyclotomicPhase <> n:7 var
+def 1231:1244 <> rotation_index
+R1255:1257 Coq.Init.Datatypes <> nat ind
+binder 1247:1247 <> n:8
+binder 1249:1249 <> k:9
+binder 1251:1251 <> i:10
+R1262:1264 Coq.Init.Datatypes <> nat ind
+R1269:1269 Coq.Init.Nat <> ::nat_scope:x_'mod'_x not
+R1275:1280 Coq.Init.Nat <> ::nat_scope:x_'mod'_x not
+R1271:1273 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1270:1270 CyclotomicPhase <> i:10 var
+R1274:1274 CyclotomicPhase <> k:9 var
+R1281:1281 CyclotomicPhase <> n:8 var
+prf 1293:1306 <> rotation_wraps
+R1325:1327 Coq.Init.Datatypes <> nat ind
+binder 1317:1317 <> n:11
+binder 1319:1319 <> k:12
+binder 1321:1321 <> i:13
+R1337:1340 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1333:1335 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R1332:1332 CyclotomicPhase <> n:11 var
+R1361:1363 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R1341:1354 CyclotomicPhase <> rotation_index def
+R1356:1356 CyclotomicPhase <> n:11 var
+R1358:1358 CyclotomicPhase <> k:12 var
+R1360:1360 CyclotomicPhase <> i:13 var
+R1364:1364 CyclotomicPhase <> n:11 var
+R1402:1415 CyclotomicPhase <> rotation_index def
+R1426:1444 Coq.Arith.PeanoNat Nat mod_upper_bound def
+R1426:1444 Coq.Arith.PeanoNat Nat mod_upper_bound def
+def 1593:1609 <> speedup_numerator
+R1613:1615 Coq.Init.Datatypes <> nat ind
+def 1636:1654 <> speedup_denominator
+R1658:1660 Coq.Init.Datatypes <> nat ind
+prf 1677:1695 <> speedup_significant
+R1723:1726 Coq.Init.Peano <> ::nat_scope:x_'>='_x not
+R1716:1718 Coq.Init.Nat <> ::nat_scope:x_'*'_x not
+R1699:1715 CyclotomicPhase <> speedup_numerator def
+R1729:1731 Coq.Init.Nat <> ::nat_scope:x_'*'_x not
+R1754:1770 CyclotomicPhase <> speedup_numerator def
+def 1873:1888 <> modular_distance
+R1905:1907 Coq.Init.Datatypes <> nat ind
+binder 1891:1891 <> a:14
+binder 1893:1893 <> b:15
+binder 1895:1901 <> modulus:16
+R1912:1914 Coq.Init.Datatypes <> nat ind
+R1933:1933 Coq.Init.Nat <> ::nat_scope:x_'mod'_x not
+R1949:1954 Coq.Init.Nat <> ::nat_scope:x_'mod'_x not
+R1945:1947 Coq.Init.Nat <> ::nat_scope:x_'-'_x not
+R1935:1937 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1934:1934 CyclotomicPhase <> a:14 var
+R1938:1944 CyclotomicPhase <> modulus:16 var
+R1948:1948 CyclotomicPhase <> b:15 var
+R1955:1961 CyclotomicPhase <> modulus:16 var
+binder 1925:1928 <> diff:17
+R1975:1979 Coq.Init.Nat <> ::nat_scope:x_'<=?'_x not
+R1971:1974 CyclotomicPhase <> diff:17 var
+R1987:1989 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R1980:1986 CyclotomicPhase <> modulus:16 var
+R2016:2018 Coq.Init.Nat <> ::nat_scope:x_'-'_x not
+R2009:2015 CyclotomicPhase <> modulus:16 var
+R2019:2022 CyclotomicPhase <> diff:17 var
+R1997:2000 CyclotomicPhase <> diff:17 var
+prf 2034:2049 <> distance_bounded
+R2068:2070 Coq.Init.Datatypes <> nat ind
+binder 2060:2060 <> a:18
+binder 2062:2062 <> b:19
+binder 2064:2064 <> m:20
+R2080:2083 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2076:2078 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R2075:2075 CyclotomicPhase <> m:20 var
+R2106:2109 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R2084:2099 CyclotomicPhase <> modular_distance def
+R2101:2101 CyclotomicPhase <> a:18 var
+R2103:2103 CyclotomicPhase <> b:19 var
+R2105:2105 CyclotomicPhase <> m:20 var
+R2111:2113 Coq.Init.Nat <> ::nat_scope:x_'/'_x not
+R2110:2110 CyclotomicPhase <> m:20 var
+prf 2226:2243 <> distance_symmetric
+R2262:2264 Coq.Init.Datatypes <> nat ind
+binder 2254:2254 <> a:21
+binder 2256:2256 <> b:22
+binder 2258:2258 <> m:23
+R2274:2277 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2270:2272 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R2269:2269 CyclotomicPhase <> m:23 var
+R2300:2302 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2278:2293 CyclotomicPhase <> modular_distance def
+R2295:2295 CyclotomicPhase <> a:21 var
+R2297:2297 CyclotomicPhase <> b:22 var
+R2299:2299 CyclotomicPhase <> m:23 var
+R2303:2318 CyclotomicPhase <> modular_distance def
+R2320:2320 CyclotomicPhase <> b:22 var
+R2322:2322 CyclotomicPhase <> a:21 var
+R2324:2324 CyclotomicPhase <> m:23 var

@@ -1,0 +1,792 @@
+[==========] Running 311 tests from 55 test suites.
+[----------] Global test environment set-up.
+[----------] 4 tests from CiphertextTest
+[ RUN      ] CiphertextTest.BFVCiphertextBasics
+[       OK ] CiphertextTest.BFVCiphertextBasics (0 ms)
+[ RUN      ] CiphertextTest.BFVSaveLoadCiphertext
+[       OK ] CiphertextTest.BFVSaveLoadCiphertext (3 ms)
+[ RUN      ] CiphertextTest.BGVCiphertextBasics
+[       OK ] CiphertextTest.BGVCiphertextBasics (0 ms)
+[ RUN      ] CiphertextTest.BGVSaveLoadCiphertext
+[       OK ] CiphertextTest.BGVSaveLoadCiphertext (1 ms)
+[----------] 4 tests from CiphertextTest (5 ms total)
+
+[----------] 2 tests from CKKSEncoderTest
+[ RUN      ] CKKSEncoderTest.CKKSEncoderEncodeVectorDecodeTest
+[       OK ] CKKSEncoderTest.CKKSEncoderEncodeVectorDecodeTest (13 ms)
+[ RUN      ] CKKSEncoderTest.CKKSEncoderEncodeSingleDecodeTest
+[       OK ] CKKSEncoderTest.CKKSEncoderEncodeSingleDecodeTest (5 ms)
+[----------] 2 tests from CKKSEncoderTest (19 ms total)
+
+[----------] 3 tests from ContextTest
+[ RUN      ] ContextTest.BFVContextConstructor
+[       OK ] ContextTest.BFVContextConstructor (13 ms)
+[ RUN      ] ContextTest.ModulusChainExpansion
+[       OK ] ContextTest.ModulusChainExpansion (7 ms)
+[ RUN      ] ContextTest.BGVContextConstructor
+[       OK ] ContextTest.BGVContextConstructor (12 ms)
+[----------] 3 tests from ContextTest (34 ms total)
+
+[----------] 2 tests from EncryptionParameterQualifiersTest
+[ RUN      ] EncryptionParameterQualifiersTest.BFVParameterError
+[       OK ] EncryptionParameterQualifiersTest.BFVParameterError (0 ms)
+[ RUN      ] EncryptionParameterQualifiersTest.BGVParameterError
+[       OK ] EncryptionParameterQualifiersTest.BGVParameterError (0 ms)
+[----------] 2 tests from EncryptionParameterQualifiersTest (0 ms total)
+
+[----------] 3 tests from EncryptionParametersTest
+[ RUN      ] EncryptionParametersTest.EncryptionParametersSet
+[       OK ] EncryptionParametersTest.EncryptionParametersSet (0 ms)
+[ RUN      ] EncryptionParametersTest.EncryptionParametersCompare
+[       OK ] EncryptionParametersTest.EncryptionParametersCompare (0 ms)
+[ RUN      ] EncryptionParametersTest.EncryptionParametersSaveLoad
+[       OK ] EncryptionParametersTest.EncryptionParametersSaveLoad (1 ms)
+[----------] 3 tests from EncryptionParametersTest (2 ms total)
+
+[----------] 6 tests from EncryptorTest
+[ RUN      ] EncryptorTest.BFVEncryptDecrypt
+[       OK ] EncryptorTest.BFVEncryptDecrypt (12 ms)
+[ RUN      ] EncryptorTest.BFVEncryptZeroDecrypt
+[       OK ] EncryptorTest.BFVEncryptZeroDecrypt (2 ms)
+[ RUN      ] EncryptorTest.CKKSEncryptZeroDecrypt
+[       OK ] EncryptorTest.CKKSEncryptZeroDecrypt (2 ms)
+[ RUN      ] EncryptorTest.CKKSEncryptDecrypt
+[       OK ] EncryptorTest.CKKSEncryptDecrypt (32 ms)
+[ RUN      ] EncryptorTest.BGVEncryptDecrypt
+[       OK ] EncryptorTest.BGVEncryptDecrypt (1 ms)
+[ RUN      ] EncryptorTest.BGVEncryptZeroDecrypt
+[       OK ] EncryptorTest.BGVEncryptZeroDecrypt (1 ms)
+[----------] 6 tests from EncryptorTest (53 ms total)
+
+[----------] 53 tests from EvaluatorTest
+[ RUN      ] EvaluatorTest.BFVEncryptNegateDecrypt
+[       OK ] EvaluatorTest.BFVEncryptNegateDecrypt (0 ms)
+[ RUN      ] EvaluatorTest.BFVEncryptAddDecrypt
+[       OK ] EvaluatorTest.BFVEncryptAddDecrypt (1 ms)
+[ RUN      ] EvaluatorTest.BGVEncryptNegateDecrypt
+[       OK ] EvaluatorTest.BGVEncryptNegateDecrypt (0 ms)
+[ RUN      ] EvaluatorTest.BGVEncryptAddDecrypt
+[       OK ] EvaluatorTest.BGVEncryptAddDecrypt (1 ms)
+[ RUN      ] EvaluatorTest.CKKSEncryptAddDecrypt
+[       OK ] EvaluatorTest.CKKSEncryptAddDecrypt (32 ms)
+[ RUN      ] EvaluatorTest.CKKSEncryptAddPlainDecrypt
+[       OK ] EvaluatorTest.CKKSEncryptAddPlainDecrypt (16 ms)
+[ RUN      ] EvaluatorTest.CKKSEncryptSubPlainDecrypt
+[       OK ] EvaluatorTest.CKKSEncryptSubPlainDecrypt (19 ms)
+[ RUN      ] EvaluatorTest.BFVEncryptSubDecrypt
+[       OK ] EvaluatorTest.BFVEncryptSubDecrypt (0 ms)
+[ RUN      ] EvaluatorTest.BFVEncryptAddPlainDecrypt
+[       OK ] EvaluatorTest.BFVEncryptAddPlainDecrypt (0 ms)
+[ RUN      ] EvaluatorTest.BFVEncryptSubPlainDecrypt
+[       OK ] EvaluatorTest.BFVEncryptSubPlainDecrypt (0 ms)
+[ RUN      ] EvaluatorTest.BFVEncryptMultiplyPlainDecrypt
+[       OK ] EvaluatorTest.BFVEncryptMultiplyPlainDecrypt (5 ms)
+[ RUN      ] EvaluatorTest.BFVEncryptMultiplyDecrypt
+[       OK ] EvaluatorTest.BFVEncryptMultiplyDecrypt (8 ms)
+[ RUN      ] EvaluatorTest.BGVEncryptSubDecrypt
+[       OK ] EvaluatorTest.BGVEncryptSubDecrypt (1 ms)
+[ RUN      ] EvaluatorTest.BGVEncryptAddPlainDecrypt
+[       OK ] EvaluatorTest.BGVEncryptAddPlainDecrypt (0 ms)
+[ RUN      ] EvaluatorTest.BGVEncryptSubPlainDecrypt
+[       OK ] EvaluatorTest.BGVEncryptSubPlainDecrypt (0 ms)
+[ RUN      ] EvaluatorTest.BGVEncryptMultiplyPlainDecrypt
+[       OK ] EvaluatorTest.BGVEncryptMultiplyPlainDecrypt (5 ms)
+[ RUN      ] EvaluatorTest.BGVEncryptMultiplyDecrypt
+[       OK ] EvaluatorTest.BGVEncryptMultiplyDecrypt (6 ms)
+[ RUN      ] EvaluatorTest.BFVRelinearize
+[       OK ] EvaluatorTest.BFVRelinearize (4 ms)
+[ RUN      ] EvaluatorTest.BGVRelinearize
+[       OK ] EvaluatorTest.BGVRelinearize (3 ms)
+[ RUN      ] EvaluatorTest.CKKSEncryptNaiveMultiplyDecrypt
+[       OK ] EvaluatorTest.CKKSEncryptNaiveMultiplyDecrypt (34 ms)
+[ RUN      ] EvaluatorTest.CKKSEncryptMultiplyByNumberDecrypt
+[       OK ] EvaluatorTest.CKKSEncryptMultiplyByNumberDecrypt (19 ms)
+[ RUN      ] EvaluatorTest.CKKSEncryptMultiplyRelinDecrypt
+[       OK ] EvaluatorTest.CKKSEncryptMultiplyRelinDecrypt (27 ms)
+[ RUN      ] EvaluatorTest.CKKSEncryptSquareRelinDecrypt
+[       OK ] EvaluatorTest.CKKSEncryptSquareRelinDecrypt (39 ms)
+[ RUN      ] EvaluatorTest.CKKSEncryptMultiplyRelinRescaleDecrypt
+[       OK ] EvaluatorTest.CKKSEncryptMultiplyRelinRescaleDecrypt (194 ms)
+[ RUN      ] EvaluatorTest.CKKSEncryptSquareRelinRescaleDecrypt
+[       OK ] EvaluatorTest.CKKSEncryptSquareRelinRescaleDecrypt (34 ms)
+[ RUN      ] EvaluatorTest.CKKSEncryptModSwitchDecrypt
+[       OK ] EvaluatorTest.CKKSEncryptModSwitchDecrypt (56 ms)
+[ RUN      ] EvaluatorTest.CKKSEncryptMultiplyRelinRescaleModSwitchAddDecrypt
+[       OK ] EvaluatorTest.CKKSEncryptMultiplyRelinRescaleModSwitchAddDecrypt (76 ms)
+[ RUN      ] EvaluatorTest.CKKSEncryptRotateDecrypt
+[       OK ] EvaluatorTest.CKKSEncryptRotateDecrypt (6 ms)
+[ RUN      ] EvaluatorTest.CKKSEncryptRescaleRotateDecrypt
+[       OK ] EvaluatorTest.CKKSEncryptRescaleRotateDecrypt (6 ms)
+[ RUN      ] EvaluatorTest.BFVEncryptSquareDecrypt
+[       OK ] EvaluatorTest.BFVEncryptSquareDecrypt (3 ms)
+[ RUN      ] EvaluatorTest.BFVEncryptMultiplyManyDecrypt
+[       OK ] EvaluatorTest.BFVEncryptMultiplyManyDecrypt (4 ms)
+[ RUN      ] EvaluatorTest.BFVEncryptExponentiateDecrypt
+[       OK ] EvaluatorTest.BFVEncryptExponentiateDecrypt (2 ms)
+[ RUN      ] EvaluatorTest.BFVEncryptAddManyDecrypt
+[       OK ] EvaluatorTest.BFVEncryptAddManyDecrypt (1 ms)
+[ RUN      ] EvaluatorTest.BGVEncryptSquareDecrypt
+[       OK ] EvaluatorTest.BGVEncryptSquareDecrypt (1 ms)
+[ RUN      ] EvaluatorTest.BGVEncryptMultiplyManyDecrypt
+[       OK ] EvaluatorTest.BGVEncryptMultiplyManyDecrypt (3 ms)
+[ RUN      ] EvaluatorTest.BGVEncryptExponentiateDecrypt
+[       OK ] EvaluatorTest.BGVEncryptExponentiateDecrypt (1 ms)
+[ RUN      ] EvaluatorTest.BGVEncryptAddManyDecrypt
+[       OK ] EvaluatorTest.BGVEncryptAddManyDecrypt (2 ms)
+[ RUN      ] EvaluatorTest.TransformPlainToNTT
+[       OK ] EvaluatorTest.TransformPlainToNTT (2 ms)
+[ RUN      ] EvaluatorTest.TransformEncryptedToFromNTT
+[       OK ] EvaluatorTest.TransformEncryptedToFromNTT (0 ms)
+[ RUN      ] EvaluatorTest.BFVEncryptMultiplyPlainNTTDecrypt
+[       OK ] EvaluatorTest.BFVEncryptMultiplyPlainNTTDecrypt (1 ms)
+[ RUN      ] EvaluatorTest.BFVEncryptApplyGaloisDecrypt
+[       OK ] EvaluatorTest.BFVEncryptApplyGaloisDecrypt (1 ms)
+[ RUN      ] EvaluatorTest.BFVEncryptRotateMatrixDecrypt
+[       OK ] EvaluatorTest.BFVEncryptRotateMatrixDecrypt (0 ms)
+[ RUN      ] EvaluatorTest.BFVEncryptModSwitchToNextDecrypt
+[       OK ] EvaluatorTest.BFVEncryptModSwitchToNextDecrypt (1 ms)
+[ RUN      ] EvaluatorTest.BFVEncryptModSwitchToDecrypt
+[       OK ] EvaluatorTest.BFVEncryptModSwitchToDecrypt (3 ms)
+[ RUN      ] EvaluatorTest.BGVEncryptMultiplyPlainNTTDecrypt
+[       OK ] EvaluatorTest.BGVEncryptMultiplyPlainNTTDecrypt (1 ms)
+[ RUN      ] EvaluatorTest.BGVEncryptApplyGaloisDecrypt
+[       OK ] EvaluatorTest.BGVEncryptApplyGaloisDecrypt (1 ms)
+[ RUN      ] EvaluatorTest.BGVEncryptRotateMatrixDecrypt
+[       OK ] EvaluatorTest.BGVEncryptRotateMatrixDecrypt (1 ms)
+[ RUN      ] EvaluatorTest.BGVEncryptModSwitchToNextDecrypt
+[       OK ] EvaluatorTest.BGVEncryptModSwitchToNextDecrypt (58 ms)
+[ RUN      ] EvaluatorTest.BGVEncryptModSwitchToDecrypt
+[       OK ] EvaluatorTest.BGVEncryptModSwitchToDecrypt (4 ms)
+[ RUN      ] EvaluatorTest.CKKSExactRescaleEnable
+[       OK ] EvaluatorTest.CKKSExactRescaleEnable (1 ms)
+[ RUN      ] EvaluatorTest.CKKSExactRescaleRequiresEnable
+[       OK ] EvaluatorTest.CKKSExactRescaleRequiresEnable (1 ms)
+[ RUN      ] EvaluatorTest.CKKSExactRescaleMultiplyRelinDecrypt
+[       OK ] EvaluatorTest.CKKSExactRescaleMultiplyRelinDecrypt (2 ms)
+[ RUN      ] EvaluatorTest.CKKSExactVsApproximateRescale
+[       OK ] EvaluatorTest.CKKSExactVsApproximateRescale (2 ms)
+[----------] 53 tests from EvaluatorTest (716 ms total)
+
+[----------] 2 tests from GaloisKeysTest
+[ RUN      ] GaloisKeysTest.GaloisKeysSaveLoad
+[       OK ] GaloisKeysTest.GaloisKeysSaveLoad (10 ms)
+[ RUN      ] GaloisKeysTest.GaloisKeysSeededSaveLoad
+[       OK ] GaloisKeysTest.GaloisKeysSeededSaveLoad (11 ms)
+[----------] 2 tests from GaloisKeysTest (21 ms total)
+
+[----------] 4 tests from DynArrayTest
+[ RUN      ] DynArrayTest.DynArrayBasics
+[       OK ] DynArrayTest.DynArrayBasics (0 ms)
+[ RUN      ] DynArrayTest.FromSpan
+[       OK ] DynArrayTest.FromSpan (0 ms)
+[ RUN      ] DynArrayTest.SaveLoadDynArray
+[       OK ] DynArrayTest.SaveLoadDynArray (0 ms)
+[ RUN      ] DynArrayTest.Assign
+[       OK ] DynArrayTest.Assign (0 ms)
+[----------] 4 tests from DynArrayTest (0 ms total)
+
+[----------] 4 tests from KeyGeneratorTest
+[ RUN      ] KeyGeneratorTest.BFVKeyGeneration
+[       OK ] KeyGeneratorTest.BFVKeyGeneration (8 ms)
+[ RUN      ] KeyGeneratorTest.BGVKeyGeneration
+[       OK ] KeyGeneratorTest.BGVKeyGeneration (7 ms)
+[ RUN      ] KeyGeneratorTest.CKKSKeyGeneration
+[       OK ] KeyGeneratorTest.CKKSKeyGeneration (8 ms)
+[ RUN      ] KeyGeneratorTest.Constructors
+[       OK ] KeyGeneratorTest.Constructors (11 ms)
+[----------] 4 tests from KeyGeneratorTest (35 ms total)
+
+[----------] 3 tests from MemoryPoolHandleTest
+[ RUN      ] MemoryPoolHandleTest.MemoryPoolHandleConstructAssign
+[       OK ] MemoryPoolHandleTest.MemoryPoolHandleConstructAssign (0 ms)
+[ RUN      ] MemoryPoolHandleTest.MemoryPoolHandleAllocate
+[       OK ] MemoryPoolHandleTest.MemoryPoolHandleAllocate (0 ms)
+[ RUN      ] MemoryPoolHandleTest.UseCount
+[       OK ] MemoryPoolHandleTest.UseCount (0 ms)
+[----------] 3 tests from MemoryPoolHandleTest (0 ms total)
+
+[----------] 4 tests from ModulusTest
+[ RUN      ] ModulusTest.CreateModulus
+[       OK ] ModulusTest.CreateModulus (0 ms)
+[ RUN      ] ModulusTest.CompareModulus
+[       OK ] ModulusTest.CompareModulus (0 ms)
+[ RUN      ] ModulusTest.SaveLoadModulus
+[       OK ] ModulusTest.SaveLoadModulus (0 ms)
+[ RUN      ] ModulusTest.Reduce
+[       OK ] ModulusTest.Reduce (0 ms)
+[----------] 4 tests from ModulusTest (0 ms total)
+
+[----------] 2 tests from CoeffModTest
+[ RUN      ] CoeffModTest.CustomExceptionTest
+[       OK ] CoeffModTest.CustomExceptionTest (0 ms)
+[ RUN      ] CoeffModTest.CustomTest
+[       OK ] CoeffModTest.CustomTest (0 ms)
+[----------] 2 tests from CoeffModTest (0 ms total)
+
+[----------] 3 tests from PlaintextTest
+[ RUN      ] PlaintextTest.PlaintextBasics
+[       OK ] PlaintextTest.PlaintextBasics (0 ms)
+[ RUN      ] PlaintextTest.FromSpan
+[       OK ] PlaintextTest.FromSpan (0 ms)
+[ RUN      ] PlaintextTest.SaveLoadPlaintext
+[       OK ] PlaintextTest.SaveLoadPlaintext (2 ms)
+[----------] 3 tests from PlaintextTest (2 ms total)
+
+[----------] 1 test from PublicKeyTest
+[ RUN      ] PublicKeyTest.SaveLoadPublicKey
+[       OK ] PublicKeyTest.SaveLoadPublicKey (3 ms)
+[----------] 1 test from PublicKeyTest (3 ms total)
+
+[----------] 9 tests from RandomGenerator
+[ RUN      ] RandomGenerator.UniformRandomCreateDefault
+[       OK ] RandomGenerator.UniformRandomCreateDefault (0 ms)
+[ RUN      ] RandomGenerator.RandomGeneratorFactorySeed
+[       OK ] RandomGenerator.RandomGeneratorFactorySeed (0 ms)
+[ RUN      ] RandomGenerator.SequentialRandomGenerator
+[       OK ] RandomGenerator.SequentialRandomGenerator (0 ms)
+[ RUN      ] RandomGenerator.RandomUInt64
+[       OK ] RandomGenerator.RandomUInt64 (0 ms)
+[ RUN      ] RandomGenerator.SeededRNG
+[       OK ] RandomGenerator.SeededRNG (0 ms)
+[ RUN      ] RandomGenerator.RandomSeededRNG
+[       OK ] RandomGenerator.RandomSeededRNG (0 ms)
+[ RUN      ] RandomGenerator.MultiThreaded
+[       OK ] RandomGenerator.MultiThreaded (0 ms)
+[ RUN      ] RandomGenerator.UniformRandomGeneratorInfo
+[       OK ] RandomGenerator.UniformRandomGeneratorInfo (0 ms)
+[ RUN      ] RandomGenerator.UniformRandomGeneratorInfoSaveLoad
+[       OK ] RandomGenerator.UniformRandomGeneratorInfoSaveLoad (0 ms)
+[----------] 9 tests from RandomGenerator (1 ms total)
+
+[----------] 1 test from RandomToStandard
+[ RUN      ] RandomToStandard.RandomToStandardGenerate
+[       OK ] RandomToStandard.RandomToStandardGenerate (0 ms)
+[----------] 1 test from RandomToStandard (0 ms total)
+
+[----------] 2 tests from RelinKeysTest
+[ RUN      ] RelinKeysTest.RelinKeysSaveLoad
+[       OK ] RelinKeysTest.RelinKeysSaveLoad (3 ms)
+[ RUN      ] RelinKeysTest.RelinKeysSeededSaveLoad
+[       OK ] RelinKeysTest.RelinKeysSeededSaveLoad (3 ms)
+[----------] 2 tests from RelinKeysTest (7 ms total)
+
+[----------] 1 test from SecretKeyTest
+[ RUN      ] SecretKeyTest.SaveLoadSecretKey
+[       OK ] SecretKeyTest.SaveLoadSecretKey (2 ms)
+[----------] 1 test from SecretKeyTest (3 ms total)
+
+[----------] 4 tests from SerializationTest
+[ RUN      ] SerializationTest.IsValidHeader
+[       OK ] SerializationTest.IsValidHeader (0 ms)
+[ RUN      ] SerializationTest.SEALHeaderSaveLoad
+[       OK ] SerializationTest.SEALHeaderSaveLoad (0 ms)
+[ RUN      ] SerializationTest.SaveLoadToStream
+[       OK ] SerializationTest.SaveLoadToStream (0 ms)
+[ RUN      ] SerializationTest.SaveLoadToBuffer
+[       OK ] SerializationTest.SaveLoadToBuffer (0 ms)
+[----------] 4 tests from SerializationTest (0 ms total)
+
+[----------] 2 tests from PersistentMontgomeryTest
+[ RUN      ] PersistentMontgomeryTest.EnterExitRoundTrip
+[       OK ] PersistentMontgomeryTest.EnterExitRoundTrip (0 ms)
+[ RUN      ] PersistentMontgomeryTest.MultiplicationCorrect
+[       OK ] PersistentMontgomeryTest.MultiplicationCorrect (0 ms)
+[----------] 2 tests from PersistentMontgomeryTest (0 ms total)
+
+[----------] 2 tests from MobiusIntTest
+[ RUN      ] MobiusIntTest.SignDetection
+[       OK ] MobiusIntTest.SignDetection (0 ms)
+[ RUN      ] MobiusIntTest.SignedConversion
+[       OK ] MobiusIntTest.SignedConversion (0 ms)
+[----------] 2 tests from MobiusIntTest (0 ms total)
+
+[----------] 1 test from ExactCoeffTest
+[ RUN      ] ExactCoeffTest.DualTrackInvariant
+[       OK ] ExactCoeffTest.DualTrackInvariant (0 ms)
+[----------] 1 test from ExactCoeffTest (0 ms total)
+
+[----------] 2 tests from GSOFHETest
+[ RUN      ] GSOFHETest.NoiseTracking
+[       OK ] GSOFHETest.NoiseTracking (0 ms)
+[ RUN      ] GSOFHETest.Depth50Achievable
+[       OK ] GSOFHETest.Depth50Achievable (0 ms)
+[----------] 2 tests from GSOFHETest (0 ms total)
+
+[----------] 2 tests from ShadowEntropyTest
+[ RUN      ] ShadowEntropyTest.ShadowCapture
+[       OK ] ShadowEntropyTest.ShadowCapture (0 ms)
+[ RUN      ] ShadowEntropyTest.EntropyAccumulation
+[       OK ] ShadowEntropyTest.EntropyAccumulation (0 ms)
+[----------] 2 tests from ShadowEntropyTest (0 ms total)
+
+[----------] 2 tests from MQReLUTest
+[ RUN      ] MQReLUTest.SignDetection
+[       OK ] MQReLUTest.SignDetection (0 ms)
+[ RUN      ] MQReLUTest.ReLUFunction
+[       OK ] MQReLUTest.ReLUFunction (0 ms)
+[----------] 2 tests from MQReLUTest (0 ms total)
+
+[----------] 2 tests from PadeEngineTest
+[ RUN      ] PadeEngineTest.ExpApproximation
+[       OK ] PadeEngineTest.ExpApproximation (0 ms)
+[ RUN      ] PadeEngineTest.SigmoidApproximation
+[       OK ] PadeEngineTest.SigmoidApproximation (0 ms)
+[----------] 2 tests from PadeEngineTest (0 ms total)
+
+[----------] 1 test from CyclotomicPhaseTest
+[ RUN      ] CyclotomicPhaseTest.RotationIndex
+[       OK ] CyclotomicPhaseTest.RotationIndex (0 ms)
+[----------] 1 test from CyclotomicPhaseTest (0 ms total)
+
+[----------] 2 tests from IntegerSoftmaxTest
+[ RUN      ] IntegerSoftmaxTest.SumsToScale
+[       OK ] IntegerSoftmaxTest.SumsToScale (0 ms)
+[ RUN      ] IntegerSoftmaxTest.OrderingPreserved
+[       OK ] IntegerSoftmaxTest.OrderingPreserved (0 ms)
+[----------] 2 tests from IntegerSoftmaxTest (0 ms total)
+
+[----------] 2 tests from SparseGroverTest
+[ RUN      ] SparseGroverTest.UniformInitialization
+[       OK ] SparseGroverTest.UniformInitialization (0 ms)
+[ RUN      ] SparseGroverTest.OptimalIterations
+[       OK ] SparseGroverTest.OptimalIterations (0 ms)
+[----------] 2 tests from SparseGroverTest (0 ms total)
+
+[----------] 2 tests from StateCompressionTest
+[ RUN      ] StateCompressionTest.SparseKMarkedCompression
+[       OK ] StateCompressionTest.SparseKMarkedCompression (0 ms)
+[ RUN      ] StateCompressionTest.GHZCompression
+[       OK ] StateCompressionTest.GHZCompression (0 ms)
+[----------] 2 tests from StateCompressionTest (0 ms total)
+
+[----------] 3 tests from OrderFindingTest
+[ RUN      ] OrderFindingTest.SmallOrders
+[       OK ] OrderFindingTest.SmallOrders (0 ms)
+[ RUN      ] OrderFindingTest.FactorSemiprime
+[       OK ] OrderFindingTest.FactorSemiprime (0 ms)
+[ RUN      ] OrderFindingTest.KRecurrenceVerification
+[       OK ] OrderFindingTest.KRecurrenceVerification (0 ms)
+[----------] 3 tests from OrderFindingTest (0 ms total)
+
+[----------] 1 test from Nine65IntegrationTest
+[ RUN      ] Nine65IntegrationTest.AllInnovationsCompile
+[       OK ] Nine65IntegrationTest.AllInnovationsCompile (0 ms)
+[----------] 1 test from Nine65IntegrationTest (0 ms total)
+
+[----------] 1 test from ClipNormal
+[ RUN      ] ClipNormal.ClipNormalGenerate
+[       OK ] ClipNormal.ClipNormalGenerate (0 ms)
+[----------] 1 test from ClipNormal (0 ms total)
+
+[----------] 10 tests from Common
+[ RUN      ] Common.Constants
+[       OK ] Common.Constants (0 ms)
+[ RUN      ] Common.UnsignedComparisons
+[       OK ] Common.UnsignedComparisons (0 ms)
+[ RUN      ] Common.SafeArithmetic
+[       OK ] Common.SafeArithmetic (0 ms)
+[ RUN      ] Common.FitsIn
+[       OK ] Common.FitsIn (0 ms)
+[ RUN      ] Common.DivideRoundUp
+[       OK ] Common.DivideRoundUp (0 ms)
+[ RUN      ] Common.HammingWeight
+[       OK ] Common.HammingWeight (0 ms)
+[ RUN      ] Common.ReverseBits32
+[       OK ] Common.ReverseBits32 (0 ms)
+[ RUN      ] Common.ReverseBits64
+[       OK ] Common.ReverseBits64 (0 ms)
+[ RUN      ] Common.GetSignificantBitCount
+[       OK ] Common.GetSignificantBitCount (0 ms)
+[ RUN      ] Common.GetMSBIndexGeneric
+[       OK ] Common.GetMSBIndexGeneric (0 ms)
+[----------] 10 tests from Common (0 ms total)
+
+[----------] 7 tests from GaloisToolTest
+[ RUN      ] GaloisToolTest.Create
+[       OK ] GaloisToolTest.Create (2 ms)
+[ RUN      ] GaloisToolTest.EltFromStep
+[       OK ] GaloisToolTest.EltFromStep (0 ms)
+[ RUN      ] GaloisToolTest.EltsFromSteps
+[       OK ] GaloisToolTest.EltsFromSteps (0 ms)
+[ RUN      ] GaloisToolTest.EltsAll
+[       OK ] GaloisToolTest.EltsAll (0 ms)
+[ RUN      ] GaloisToolTest.IndexFromElt
+[       OK ] GaloisToolTest.IndexFromElt (0 ms)
+[ RUN      ] GaloisToolTest.ApplyGalois
+[       OK ] GaloisToolTest.ApplyGalois (0 ms)
+[ RUN      ] GaloisToolTest.ApplyGaloisNTT
+[       OK ] GaloisToolTest.ApplyGaloisNTT (0 ms)
+[----------] 7 tests from GaloisToolTest (3 ms total)
+
+[----------] 1 test from HashTest
+[ RUN      ] HashTest.Hash
+[       OK ] HashTest.Hash (0 ms)
+[----------] 1 test from HashTest (0 ms total)
+
+[----------] 9 tests from IteratorTest
+[ RUN      ] IteratorTest.IterType
+[       OK ] IteratorTest.IterType (0 ms)
+[ RUN      ] IteratorTest.Iterate
+[       OK ] IteratorTest.Iterate (0 ms)
+[ RUN      ] IteratorTest.SeqIter
+[       OK ] IteratorTest.SeqIter (0 ms)
+[ RUN      ] IteratorTest.PtrIter
+[       OK ] IteratorTest.PtrIter (0 ms)
+[ RUN      ] IteratorTest.StrideIter
+[       OK ] IteratorTest.StrideIter (0 ms)
+[ RUN      ] IteratorTest.RNSIter
+[       OK ] IteratorTest.RNSIter (0 ms)
+[ RUN      ] IteratorTest.PolyIter
+[       OK ] IteratorTest.PolyIter (0 ms)
+[ RUN      ] IteratorTest.IterTuple
+[       OK ] IteratorTest.IterTuple (0 ms)
+[ RUN      ] IteratorTest.ReverseIter
+[       OK ] IteratorTest.ReverseIter (0 ms)
+[----------] 9 tests from IteratorTest (0 ms total)
+
+[----------] 2 tests from ReaderWriterLockerTests
+[ RUN      ] ReaderWriterLockerTests.ReaderWriterLockNonBlocking
+[       OK ] ReaderWriterLockerTests.ReaderWriterLockNonBlocking (0 ms)
+[ RUN      ] ReaderWriterLockerTests.ReaderWriterLockBlocking
+[       OK ] ReaderWriterLockerTests.ReaderWriterLockBlocking (20 ms)
+[----------] 2 tests from ReaderWriterLockerTests (20 ms total)
+
+[----------] 1 test from MemoryPoolTest
+[ RUN      ] MemoryPoolTest.TestMemoryPoolMT
+[       OK ] MemoryPoolTest.TestMemoryPoolMT (0 ms)
+[----------] 1 test from MemoryPoolTest (0 ms total)
+
+[----------] 4 tests from MemoryPoolTests
+[ RUN      ] MemoryPoolTests.PointerTestsMT
+[       OK ] MemoryPoolTests.PointerTestsMT (0 ms)
+[ RUN      ] MemoryPoolTests.TestMemoryPoolST
+[       OK ] MemoryPoolTests.TestMemoryPoolST (0 ms)
+[ RUN      ] MemoryPoolTests.PointerTestsST
+[       OK ] MemoryPoolTests.PointerTestsST (0 ms)
+[ RUN      ] MemoryPoolTests.Allocate
+[       OK ] MemoryPoolTests.Allocate (0 ms)
+[----------] 4 tests from MemoryPoolTests (0 ms total)
+
+[----------] 8 tests from NumberTheory
+[ RUN      ] NumberTheory.GCD
+[       OK ] NumberTheory.GCD (0 ms)
+[ RUN      ] NumberTheory.ExtendedGCD
+[       OK ] NumberTheory.ExtendedGCD (0 ms)
+[ RUN      ] NumberTheory.TryInvertUIntMod
+[       OK ] NumberTheory.TryInvertUIntMod (0 ms)
+[ RUN      ] NumberTheory.IsPrime
+[       OK ] NumberTheory.IsPrime (0 ms)
+[ RUN      ] NumberTheory.NAF
+[       OK ] NumberTheory.NAF (0 ms)
+[ RUN      ] NumberTheory.TryPrimitiveRootMod
+[       OK ] NumberTheory.TryPrimitiveRootMod (0 ms)
+[ RUN      ] NumberTheory.IsPrimitiveRootMod
+[       OK ] NumberTheory.IsPrimitiveRootMod (0 ms)
+[ RUN      ] NumberTheory.TryMinimalPrimitiveRootMod
+[       OK ] NumberTheory.TryMinimalPrimitiveRootMod (0 ms)
+[----------] 8 tests from NumberTheory (0 ms total)
+
+[----------] 9 tests from PolyArithSmallMod
+[ RUN      ] PolyArithSmallMod.ModuloPolyCoeffs
+[       OK ] PolyArithSmallMod.ModuloPolyCoeffs (0 ms)
+[ RUN      ] PolyArithSmallMod.NegatePolyCoeffMod
+[       OK ] PolyArithSmallMod.NegatePolyCoeffMod (0 ms)
+[ RUN      ] PolyArithSmallMod.AddPolyCoeffMod
+[       OK ] PolyArithSmallMod.AddPolyCoeffMod (0 ms)
+[ RUN      ] PolyArithSmallMod.SubPolyCoeffMod
+[       OK ] PolyArithSmallMod.SubPolyCoeffMod (0 ms)
+[ RUN      ] PolyArithSmallMod.MultiplyPolyScalarCoeffMod
+[       OK ] PolyArithSmallMod.MultiplyPolyScalarCoeffMod (0 ms)
+[ RUN      ] PolyArithSmallMod.MultiplyPolyMonoCoeffMod
+[       OK ] PolyArithSmallMod.MultiplyPolyMonoCoeffMod (0 ms)
+[ RUN      ] PolyArithSmallMod.DyadicProductCoeffMod
+[       OK ] PolyArithSmallMod.DyadicProductCoeffMod (0 ms)
+[ RUN      ] PolyArithSmallMod.PolyInftyNormCoeffMod
+[       OK ] PolyArithSmallMod.PolyInftyNormCoeffMod (0 ms)
+[ RUN      ] PolyArithSmallMod.NegacyclicShiftPolyCoeffMod
+[       OK ] PolyArithSmallMod.NegacyclicShiftPolyCoeffMod (0 ms)
+[----------] 9 tests from PolyArithSmallMod (0 ms total)
+
+[----------] 8 tests from PolyCore
+[ RUN      ] PolyCore.AllocatePoly
+[       OK ] PolyCore.AllocatePoly (0 ms)
+[ RUN      ] PolyCore.SetZeroPoly
+[       OK ] PolyCore.SetZeroPoly (0 ms)
+[ RUN      ] PolyCore.AllocateZeroPoly
+[       OK ] PolyCore.AllocateZeroPoly (0 ms)
+[ RUN      ] PolyCore.AllocatePolyArray
+[       OK ] PolyCore.AllocatePolyArray (0 ms)
+[ RUN      ] PolyCore.SetZeroPolyArray
+[       OK ] PolyCore.SetZeroPolyArray (0 ms)
+[ RUN      ] PolyCore.AllocateZeroPolyArray
+[       OK ] PolyCore.AllocateZeroPolyArray (0 ms)
+[ RUN      ] PolyCore.SetPoly
+[       OK ] PolyCore.SetPoly (0 ms)
+[ RUN      ] PolyCore.SetPolyArray
+[       OK ] PolyCore.SetPolyArray (0 ms)
+[----------] 8 tests from PolyCore (0 ms total)
+
+[----------] 9 tests from RNSBaseTest
+[ RUN      ] RNSBaseTest.Create
+[       OK ] RNSBaseTest.Create (0 ms)
+[ RUN      ] RNSBaseTest.ArrayAccess
+[       OK ] RNSBaseTest.ArrayAccess (0 ms)
+[ RUN      ] RNSBaseTest.Copy
+[       OK ] RNSBaseTest.Copy (0 ms)
+[ RUN      ] RNSBaseTest.Contains
+[       OK ] RNSBaseTest.Contains (0 ms)
+[ RUN      ] RNSBaseTest.IsSubbaseOf
+[       OK ] RNSBaseTest.IsSubbaseOf (0 ms)
+[ RUN      ] RNSBaseTest.Extend
+[       OK ] RNSBaseTest.Extend (0 ms)
+[ RUN      ] RNSBaseTest.Drop
+[       OK ] RNSBaseTest.Drop (0 ms)
+[ RUN      ] RNSBaseTest.ComposeDecompose
+[       OK ] RNSBaseTest.ComposeDecompose (0 ms)
+[ RUN      ] RNSBaseTest.ComposeDecomposeArray
+[       OK ] RNSBaseTest.ComposeDecomposeArray (0 ms)
+[----------] 9 tests from RNSBaseTest (0 ms total)
+
+[----------] 3 tests from BaseConverterTest
+[ RUN      ] BaseConverterTest.Initialize
+[       OK ] BaseConverterTest.Initialize (0 ms)
+[ RUN      ] BaseConverterTest.Convert
+[       OK ] BaseConverterTest.Convert (0 ms)
+[ RUN      ] BaseConverterTest.ConvertArray
+[       OK ] BaseConverterTest.ConvertArray (0 ms)
+[----------] 3 tests from BaseConverterTest (0 ms total)
+
+[----------] 11 tests from RNSToolTest
+[ RUN      ] RNSToolTest.Initialize
+[       OK ] RNSToolTest.Initialize (0 ms)
+[ RUN      ] RNSToolTest.FastBConvMTilde
+[       OK ] RNSToolTest.FastBConvMTilde (0 ms)
+[ RUN      ] RNSToolTest.MontgomeryReduction
+[       OK ] RNSToolTest.MontgomeryReduction (0 ms)
+[ RUN      ] RNSToolTest.FastFloor
+[       OK ] RNSToolTest.FastFloor (0 ms)
+[ RUN      ] RNSToolTest.FastBConvSK
+[       OK ] RNSToolTest.FastBConvSK (0 ms)
+[ RUN      ] RNSToolTest.ExactScaleAndRound
+[       OK ] RNSToolTest.ExactScaleAndRound (0 ms)
+[ RUN      ] RNSToolTest.DivideAndRoundQLastInplace
+[       OK ] RNSToolTest.DivideAndRoundQLastInplace (0 ms)
+[ RUN      ] RNSToolTest.DivideAndRoundQLastNTTInplace
+[       OK ] RNSToolTest.DivideAndRoundQLastNTTInplace (0 ms)
+[ RUN      ] RNSToolTest.AnchorEnableDisable
+[       OK ] RNSToolTest.AnchorEnableDisable (0 ms)
+[ RUN      ] RNSToolTest.AnchorCoprimality
+[       OK ] RNSToolTest.AnchorCoprimality (0 ms)
+[ RUN      ] RNSToolTest.ExactDivisionWorks
+[       OK ] RNSToolTest.ExactDivisionWorks (0 ms)
+[----------] 11 tests from RNSToolTest (4 ms total)
+
+[----------] 2 tests from KEliminationTest
+[ RUN      ] KEliminationTest.ScalarRecovery
+[       OK ] KEliminationTest.ScalarRecovery (0 ms)
+[ RUN      ] KEliminationTest.PolyRecovery
+[       OK ] KEliminationTest.PolyRecovery (0 ms)
+[----------] 2 tests from KEliminationTest (0 ms total)
+
+[----------] 4 tests from NTTTablesTest
+[ RUN      ] NTTTablesTest.NTTBasics
+[       OK ] NTTTablesTest.NTTBasics (0 ms)
+[ RUN      ] NTTTablesTest.NTTPrimitiveRootsTest
+[       OK ] NTTTablesTest.NTTPrimitiveRootsTest (0 ms)
+[ RUN      ] NTTTablesTest.NegacyclicNTTTest
+[       OK ] NTTTablesTest.NegacyclicNTTTest (0 ms)
+[ RUN      ] NTTTablesTest.InverseNegacyclicNTTTest
+[       OK ] NTTTablesTest.InverseNegacyclicNTTTest (0 ms)
+[----------] 4 tests from NTTTablesTest (1 ms total)
+
+[----------] 4 tests from StringToUInt64
+[ RUN      ] StringToUInt64.IsHexCharTest
+[       OK ] StringToUInt64.IsHexCharTest (0 ms)
+[ RUN      ] StringToUInt64.HexToNibbleTest
+[       OK ] StringToUInt64.HexToNibbleTest (0 ms)
+[ RUN      ] StringToUInt64.GetHexStringBitCount
+[       OK ] StringToUInt64.GetHexStringBitCount (0 ms)
+[ RUN      ] StringToUInt64.HexStringToUInt64
+[       OK ] StringToUInt64.HexStringToUInt64 (0 ms)
+[----------] 4 tests from StringToUInt64 (0 ms total)
+
+[----------] 4 tests from UInt64ToString
+[ RUN      ] UInt64ToString.NibbleToUpperHexTest
+[       OK ] UInt64ToString.NibbleToUpperHexTest (0 ms)
+[ RUN      ] UInt64ToString.UInt64ToHexString
+[       OK ] UInt64ToString.UInt64ToHexString (0 ms)
+[ RUN      ] UInt64ToString.UInt64ToDecString
+[       OK ] UInt64ToString.UInt64ToDecString (0 ms)
+[ RUN      ] UInt64ToString.PolyToHexString
+[       OK ] UInt64ToString.PolyToHexString (0 ms)
+[----------] 4 tests from UInt64ToString (0 ms total)
+
+[----------] 35 tests from UIntArith
+[ RUN      ] UIntArith.AddUInt64Generic
+[       OK ] UIntArith.AddUInt64Generic (0 ms)
+[ RUN      ] UIntArith.AddUInt64
+[       OK ] UIntArith.AddUInt64 (0 ms)
+[ RUN      ] UIntArith.SubUInt64Generic
+[       OK ] UIntArith.SubUInt64Generic (0 ms)
+[ RUN      ] UIntArith.SubUInt64
+[       OK ] UIntArith.SubUInt64 (0 ms)
+[ RUN      ] UIntArith.AddUInt128
+[       OK ] UIntArith.AddUInt128 (0 ms)
+[ RUN      ] UIntArith.AddUInt
+[       OK ] UIntArith.AddUInt (0 ms)
+[ RUN      ] UIntArith.SubUInt
+[       OK ] UIntArith.SubUInt (0 ms)
+[ RUN      ] UIntArith.AddUIntUInt64
+[       OK ] UIntArith.AddUIntUInt64 (0 ms)
+[ RUN      ] UIntArith.SubUIntUInt64
+[       OK ] UIntArith.SubUIntUInt64 (0 ms)
+[ RUN      ] UIntArith.IncrementUInt
+[       OK ] UIntArith.IncrementUInt (0 ms)
+[ RUN      ] UIntArith.DecrementUInt
+[       OK ] UIntArith.DecrementUInt (0 ms)
+[ RUN      ] UIntArith.NegateUInt
+[       OK ] UIntArith.NegateUInt (0 ms)
+[ RUN      ] UIntArith.LeftShiftUInt
+[       OK ] UIntArith.LeftShiftUInt (0 ms)
+[ RUN      ] UIntArith.LeftShiftUInt128
+[       OK ] UIntArith.LeftShiftUInt128 (0 ms)
+[ RUN      ] UIntArith.LeftShiftUInt192
+[       OK ] UIntArith.LeftShiftUInt192 (0 ms)
+[ RUN      ] UIntArith.RightShiftUInt
+[       OK ] UIntArith.RightShiftUInt (0 ms)
+[ RUN      ] UIntArith.RightShiftUInt128
+[       OK ] UIntArith.RightShiftUInt128 (0 ms)
+[ RUN      ] UIntArith.RightShiftUInt192
+[       OK ] UIntArith.RightShiftUInt192 (0 ms)
+[ RUN      ] UIntArith.HalfRoundUpUInt
+[       OK ] UIntArith.HalfRoundUpUInt (0 ms)
+[ RUN      ] UIntArith.NotUInt
+[       OK ] UIntArith.NotUInt (0 ms)
+[ RUN      ] UIntArith.AndUInt
+[       OK ] UIntArith.AndUInt (0 ms)
+[ RUN      ] UIntArith.OrUInt
+[       OK ] UIntArith.OrUInt (0 ms)
+[ RUN      ] UIntArith.XorUInt
+[       OK ] UIntArith.XorUInt (0 ms)
+[ RUN      ] UIntArith.MultiplyUInt64Generic
+[       OK ] UIntArith.MultiplyUInt64Generic (0 ms)
+[ RUN      ] UIntArith.MultiplyUInt64
+[       OK ] UIntArith.MultiplyUInt64 (0 ms)
+[ RUN      ] UIntArith.MultiplyUInt64HW64Generic
+[       OK ] UIntArith.MultiplyUInt64HW64Generic (0 ms)
+[ RUN      ] UIntArith.MultiplyUInt64HW64
+[       OK ] UIntArith.MultiplyUInt64HW64 (0 ms)
+[ RUN      ] UIntArith.MultiplyManyUInt64
+[       OK ] UIntArith.MultiplyManyUInt64 (0 ms)
+[ RUN      ] UIntArith.MultiplyManyUInt64Except
+[       OK ] UIntArith.MultiplyManyUInt64Except (0 ms)
+[ RUN      ] UIntArith.MultiplyUInt
+[       OK ] UIntArith.MultiplyUInt (0 ms)
+[ RUN      ] UIntArith.MultiplyUIntUInt64
+[       OK ] UIntArith.MultiplyUIntUInt64 (0 ms)
+[ RUN      ] UIntArith.DivideUInt
+[       OK ] UIntArith.DivideUInt (0 ms)
+[ RUN      ] UIntArith.DivideUInt128UInt64
+[       OK ] UIntArith.DivideUInt128UInt64 (0 ms)
+[ RUN      ] UIntArith.DivideUInt192UInt64
+[       OK ] UIntArith.DivideUInt192UInt64 (0 ms)
+[ RUN      ] UIntArith.ExponentiateUInt64
+[       OK ] UIntArith.ExponentiateUInt64 (0 ms)
+[----------] 35 tests from UIntArith (0 ms total)
+
+[----------] 7 tests from UIntArithMod
+[ RUN      ] UIntArithMod.IncrementUIntMod
+[       OK ] UIntArithMod.IncrementUIntMod (0 ms)
+[ RUN      ] UIntArithMod.DecrementUIntMod
+[       OK ] UIntArithMod.DecrementUIntMod (0 ms)
+[ RUN      ] UIntArithMod.NegateUIntMod
+[       OK ] UIntArithMod.NegateUIntMod (0 ms)
+[ RUN      ] UIntArithMod.Div2UIntMod
+[       OK ] UIntArithMod.Div2UIntMod (0 ms)
+[ RUN      ] UIntArithMod.AddUIntMod
+[       OK ] UIntArithMod.AddUIntMod (0 ms)
+[ RUN      ] UIntArithMod.SubUIntMod
+[       OK ] UIntArithMod.SubUIntMod (0 ms)
+[ RUN      ] UIntArithMod.TryInvertUIntMod
+[       OK ] UIntArithMod.TryInvertUIntMod (0 ms)
+[----------] 7 tests from UIntArithMod (0 ms total)
+
+[----------] 17 tests from UIntArithSmallMod
+[ RUN      ] UIntArithSmallMod.IncrementUIntMod
+[       OK ] UIntArithSmallMod.IncrementUIntMod (0 ms)
+[ RUN      ] UIntArithSmallMod.DecrementUIntMod
+[       OK ] UIntArithSmallMod.DecrementUIntMod (0 ms)
+[ RUN      ] UIntArithSmallMod.NegateUIntMod
+[       OK ] UIntArithSmallMod.NegateUIntMod (0 ms)
+[ RUN      ] UIntArithSmallMod.Div2UIntMod
+[       OK ] UIntArithSmallMod.Div2UIntMod (0 ms)
+[ RUN      ] UIntArithSmallMod.AddUIntMod
+[       OK ] UIntArithSmallMod.AddUIntMod (0 ms)
+[ RUN      ] UIntArithSmallMod.SubUIntMod
+[       OK ] UIntArithSmallMod.SubUIntMod (0 ms)
+[ RUN      ] UIntArithSmallMod.BarrettReduce128
+[       OK ] UIntArithSmallMod.BarrettReduce128 (0 ms)
+[ RUN      ] UIntArithSmallMod.MultiplyUIntMod
+[       OK ] UIntArithSmallMod.MultiplyUIntMod (0 ms)
+[ RUN      ] UIntArithSmallMod.MultiplyAddMod
+[       OK ] UIntArithSmallMod.MultiplyAddMod (0 ms)
+[ RUN      ] UIntArithSmallMod.ModuloUIntMod
+[       OK ] UIntArithSmallMod.ModuloUIntMod (0 ms)
+[ RUN      ] UIntArithSmallMod.TryInvertUIntMod
+[       OK ] UIntArithSmallMod.TryInvertUIntMod (0 ms)
+[ RUN      ] UIntArithSmallMod.ExponentiateUIntMod
+[       OK ] UIntArithSmallMod.ExponentiateUIntMod (0 ms)
+[ RUN      ] UIntArithSmallMod.DotProductMod
+[       OK ] UIntArithSmallMod.DotProductMod (0 ms)
+[ RUN      ] UIntArithSmallMod.MultiplyUIntModOperand
+[       OK ] UIntArithSmallMod.MultiplyUIntModOperand (0 ms)
+[ RUN      ] UIntArithSmallMod.MultiplyUIntMod2
+[       OK ] UIntArithSmallMod.MultiplyUIntMod2 (0 ms)
+[ RUN      ] UIntArithSmallMod.MultiplyUIntModLazy
+[       OK ] UIntArithSmallMod.MultiplyUIntModLazy (0 ms)
+[ RUN      ] UIntArithSmallMod.MultiplyAddMod2
+[       OK ] UIntArithSmallMod.MultiplyAddMod2 (0 ms)
+[----------] 17 tests from UIntArithSmallMod (0 ms total)
+
+[----------] 18 tests from UIntCore
+[ RUN      ] UIntCore.AllocateUInt
+[       OK ] UIntCore.AllocateUInt (0 ms)
+[ RUN      ] UIntCore.SetZeroUInt
+[       OK ] UIntCore.SetZeroUInt (0 ms)
+[ RUN      ] UIntCore.AllocateZeroUInt
+[       OK ] UIntCore.AllocateZeroUInt (0 ms)
+[ RUN      ] UIntCore.SetUInt
+[       OK ] UIntCore.SetUInt (0 ms)
+[ RUN      ] UIntCore.SetUInt2
+[       OK ] UIntCore.SetUInt2 (0 ms)
+[ RUN      ] UIntCore.SetUInt3
+[       OK ] UIntCore.SetUInt3 (0 ms)
+[ RUN      ] UIntCore.IsZeroUInt
+[       OK ] UIntCore.IsZeroUInt (0 ms)
+[ RUN      ] UIntCore.IsEqualUInt
+[       OK ] UIntCore.IsEqualUInt (0 ms)
+[ RUN      ] UIntCore.IsBitSetUInt
+[       OK ] UIntCore.IsBitSetUInt (0 ms)
+[ RUN      ] UIntCore.IsHighBitSetUInt
+[       OK ] UIntCore.IsHighBitSetUInt (0 ms)
+[ RUN      ] UIntCore.SetBitUInt
+[       OK ] UIntCore.SetBitUInt (0 ms)
+[ RUN      ] UIntCore.GetSignificantBitCountUInt
+[       OK ] UIntCore.GetSignificantBitCountUInt (0 ms)
+[ RUN      ] UIntCore.GetSignificantUInt64CountUInt
+[       OK ] UIntCore.GetSignificantUInt64CountUInt (0 ms)
+[ RUN      ] UIntCore.GetNonzeroUInt64CountUInt
+[       OK ] UIntCore.GetNonzeroUInt64CountUInt (0 ms)
+[ RUN      ] UIntCore.FilterHighBitsUInt
+[       OK ] UIntCore.FilterHighBitsUInt (0 ms)
+[ RUN      ] UIntCore.CompareUInt
+[       OK ] UIntCore.CompareUInt (0 ms)
+[ RUN      ] UIntCore.GetPowerOfTwo
+[       OK ] UIntCore.GetPowerOfTwo (0 ms)
+[ RUN      ] UIntCore.DuplicateUIntIfNeeded
+[       OK ] UIntCore.DuplicateUIntIfNeeded (0 ms)
+[----------] 18 tests from UIntCore (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 311 tests from 55 test suites ran. (941 ms total)
+[  PASSED  ] 311 tests.

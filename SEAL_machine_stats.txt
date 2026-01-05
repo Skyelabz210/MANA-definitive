@@ -1,0 +1,42 @@
+Date: 2026-01-04
+Host: coreI7
+Kernel: Linux 6.12.48+deb13-amd64 (Debian 6.12.48-1, SMP PREEMPT_DYNAMIC)
+
+CPU:
+- Model: Intel(R) Core(TM) i7-3632QM CPU @ 2.20GHz
+- Sockets/Cores/Threads: 1 socket / 4 cores / 8 threads
+- Max/Min freq: 3.2 GHz / 1.2 GHz (scaling governor active)
+- Cache: L1d 128 KiB, L1i 128 KiB, L2 1 MiB, L3 6 MiB
+- Flags: avx, f16c, pclmulqdq, sse4_1, sse4_2, popcnt, rdtscp, vmx
+
+Memory:
+- RAM: 7.6 GiB total (3.3 GiB used, 3.2 GiB free, 1.7 GiB cache, 4.3 GiB available)
+- Swap: 29 GiB total (2.0 GiB used)
+
+Notes:
+- NUMA nodes: 1 (CPUs 0-7)
+- LD_LIBRARY_PATH used for SEAL runs: /home/acid/Projects/SEAL/build/lib
+
+GPU:
+- Intel HD Graphics 3rd Gen
+- NVIDIA GeForce 610M/710M (GF117M)
+
+Storage:
+- / (projects on /dev/sda1): 104G total, 83G used, 16G free (85% used)
+
+Toolchain:
+- g++ (Debian 14.2.0-19) 14.2.0
+- cmake 3.31.6
+- Python 3.13.5
+
+Runtime snapshot:
+- Load avg: 2.66 2.52 2.44
+
+Recorded runs:
+- Functional FHE log: /home/acid/Projects/NINE65/MANA_boosted/SEAL_fhe_functional_run.txt (7/7 pass)
+- Benchmarks log: /home/acid/Projects/NINE65/MANA_boosted/SEAL_nine65_bench_run.txt
+- Upstream SEAL tests (311/311): /home/acid/Projects/NINE65/MANA_boosted/SEAL_upstream_tests.txt
+- Upstream SEAL benchmarks (sealbench): /home/acid/Projects/NINE65/MANA_boosted/SEAL_upstream_bench.txt
+
+Upstream test suite:
+- Built with SEAL_BUILD_TESTS/SEAL_BUILD_BENCH/SEAL_BUILD_EXAMPLES enabled; ctest meta lists none, but direct run of ./bin/sealtest passes 311/311. Benchmarks captured via ./bin/sealbench --benchmark_min_time=0.01.

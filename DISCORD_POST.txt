@@ -1,0 +1,25 @@
+Looking for testers: standalone BFV demo binary (Linux x86_64)
+
+Built a BFV homomorphic encryption implementation and would appreciate feedback from people who actually work with FHE. This is a black-box demo — source isn't public yet, but the binary is functional and you can test it with your own inputs.
+
+What it does:
+- Full BFV workflow: keygen → encrypt → homomorphic ops → decrypt
+- Supports add, sub, negate, add-plain, mul-plain
+- Multiple security configs (toy through 192-bit)
+- Deterministic mode for reproducibility or OS entropy
+
+Download: [attach fhe_demo_linux_x86_64.tar.gz]
+SHA256: [paste from SHA256SUMS]
+
+Run:
+```
+tar xzf fhe_demo_linux_x86_64.tar.gz
+./target/release/fhe_demo --a 100 --b 200 --os-seed
+```
+
+Exit code 0 = passed. Looking for:
+- Does it run on your system?
+- Performance numbers on different hardware
+- Any unexpected behavior
+
+Happy to answer questions about what it does. Implementation details stay private for now.

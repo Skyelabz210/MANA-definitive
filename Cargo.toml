@@ -19,6 +19,7 @@ zeroize = { version = "1.7", features = ["derive"] }
 getrandom = "0.2"
 subtle = "2.5"
 sha2 = "0.10"
+thiserror = "1.0"
 
 # Dev
 criterion = "0.5"

@@ -1,0 +1,180 @@
+DIGEST fc492e702ea6d48e805e34a19810ceb4
+FEncryptedQuantum
+R180:184 Coq.Arith.Arith <> <> lib
+R202:204 Coq.micromega.Lia <> <> lib
+R222:224 Coq.Init.Nat <> <> lib
+rec 652:654 <> Fp2
+proj 663:670 <> fp2_real
+proj 681:688 <> fp2_imag
+proj 699:703 <> fp2_p
+R674:676 Coq.Init.Datatypes <> nat ind
+R692:694 Coq.Init.Datatypes <> nat ind
+R707:709 Coq.Init.Datatypes <> nat ind
+def 727:733 <> fp2_add
+R742:744 EncryptedQuantum <> Fp2 rec
+binder 736:736 <> a:5
+binder 738:738 <> b:6
+R749:751 EncryptedQuantum <> Fp2 rec
+R761:768 EncryptedQuantum <> fp2_real proj
+R761:768 EncryptedQuantum <> fp2_real proj
+R761:768 EncryptedQuantum <> fp2_real proj
+R823:830 EncryptedQuantum <> fp2_imag proj
+R823:830 EncryptedQuantum <> fp2_imag proj
+R885:889 EncryptedQuantum <> fp2_p proj
+R885:889 EncryptedQuantum <> fp2_p proj
+R773:773 Coq.Init.Nat <> ::nat_scope:x_'mod'_x not
+R801:806 Coq.Init.Nat <> ::nat_scope:x_'mod'_x not
+R786:788 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R777:784 EncryptedQuantum <> fp2_real proj
+R774:774 EncryptedQuantum <> a:5 var
+R792:799 EncryptedQuantum <> fp2_real proj
+R789:789 EncryptedQuantum <> b:6 var
+R810:814 EncryptedQuantum <> fp2_p proj
+R807:807 EncryptedQuantum <> a:5 var
+R835:835 Coq.Init.Nat <> ::nat_scope:x_'mod'_x not
+R863:868 Coq.Init.Nat <> ::nat_scope:x_'mod'_x not
+R848:850 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R839:846 EncryptedQuantum <> fp2_imag proj
+R836:836 EncryptedQuantum <> a:5 var
+R854:861 EncryptedQuantum <> fp2_imag proj
+R851:851 EncryptedQuantum <> b:6 var
+R872:876 EncryptedQuantum <> fp2_p proj
+R869:869 EncryptedQuantum <> a:5 var
+R897:901 EncryptedQuantum <> fp2_p proj
+R894:894 EncryptedQuantum <> a:5 var
+def 920:926 <> fp2_neg
+R933:935 EncryptedQuantum <> Fp2 rec
+binder 929:929 <> a:7
+R940:942 EncryptedQuantum <> Fp2 rec
+R952:959 EncryptedQuantum <> fp2_real proj
+R952:959 EncryptedQuantum <> fp2_real proj
+R952:959 EncryptedQuantum <> fp2_real proj
+R1011:1018 EncryptedQuantum <> fp2_imag proj
+R1011:1018 EncryptedQuantum <> fp2_imag proj
+R1070:1074 EncryptedQuantum <> fp2_p proj
+R1070:1074 EncryptedQuantum <> fp2_p proj
+R964:964 Coq.Init.Nat <> ::nat_scope:x_'mod'_x not
+R989:994 Coq.Init.Nat <> ::nat_scope:x_'mod'_x not
+R974:976 Coq.Init.Nat <> ::nat_scope:x_'-'_x not
+R968:972 EncryptedQuantum <> fp2_p proj
+R965:965 EncryptedQuantum <> a:7 var
+R980:987 EncryptedQuantum <> fp2_real proj
+R977:977 EncryptedQuantum <> a:7 var
+R998:1002 EncryptedQuantum <> fp2_p proj
+R995:995 EncryptedQuantum <> a:7 var
+R1023:1023 Coq.Init.Nat <> ::nat_scope:x_'mod'_x not
+R1048:1053 Coq.Init.Nat <> ::nat_scope:x_'mod'_x not
+R1033:1035 Coq.Init.Nat <> ::nat_scope:x_'-'_x not
+R1027:1031 EncryptedQuantum <> fp2_p proj
+R1024:1024 EncryptedQuantum <> a:7 var
+R1039:1046 EncryptedQuantum <> fp2_imag proj
+R1036:1036 EncryptedQuantum <> a:7 var
+R1057:1061 EncryptedQuantum <> fp2_p proj
+R1054:1054 EncryptedQuantum <> a:7 var
+R1082:1086 EncryptedQuantum <> fp2_p proj
+R1079:1079 EncryptedQuantum <> a:7 var
+rec 1131:1142 <> SparseGrover
+proj 1151:1163 <> sg_num_qubits
+proj 1174:1177 <> sg_k
+proj 1188:1200 <> sg_marked_amp
+proj 1211:1225 <> sg_unmarked_amp
+R1167:1169 Coq.Init.Datatypes <> nat ind
+R1181:1183 Coq.Init.Datatypes <> nat ind
+R1204:1206 EncryptedQuantum <> Fp2 rec
+R1229:1231 EncryptedQuantum <> Fp2 rec
+def 1249:1261 <> grover_oracle
+R1269:1280 EncryptedQuantum <> SparseGrover rec
+binder 1264:1265 <> sg:13
+R1285:1296 EncryptedQuantum <> SparseGrover rec
+R1306:1318 EncryptedQuantum <> sg_num_qubits proj
+R1306:1318 EncryptedQuantum <> sg_num_qubits proj
+R1306:1318 EncryptedQuantum <> sg_num_qubits proj
+R1348:1351 EncryptedQuantum <> sg_k proj
+R1348:1351 EncryptedQuantum <> sg_k proj
+R1372:1384 EncryptedQuantum <> sg_marked_amp proj
+R1372:1384 EncryptedQuantum <> sg_marked_amp proj
+R1422:1436 EncryptedQuantum <> sg_unmarked_amp proj
+R1422:1436 EncryptedQuantum <> sg_unmarked_amp proj
+R1327:1339 EncryptedQuantum <> sg_num_qubits proj
+R1323:1324 EncryptedQuantum <> sg:13 var
+R1360:1363 EncryptedQuantum <> sg_k proj
+R1356:1357 EncryptedQuantum <> sg:13 var
+R1389:1395 EncryptedQuantum <> fp2_neg def
+R1401:1413 EncryptedQuantum <> sg_marked_amp proj
+R1397:1398 EncryptedQuantum <> sg:13 var
+R1445:1459 EncryptedQuantum <> sg_unmarked_amp proj
+R1441:1442 EncryptedQuantum <> sg:13 var
+prf 1475:1492 <> oracle_preserves_k
+R1508:1519 EncryptedQuantum <> SparseGrover rec
+binder 1503:1504 <> sg:14
+R1549:1551 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1544:1547 EncryptedQuantum <> sg_k proj
+R1525:1537 EncryptedQuantum <> grover_oracle def
+R1539:1540 EncryptedQuantum <> sg:14 var
+R1556:1559 EncryptedQuantum <> sg_k proj
+R1552:1553 EncryptedQuantum <> sg:14 var
+def 1636:1654 <> noise_per_iteration
+R1658:1660 Coq.Init.Datatypes <> nat ind
+def 1680:1701 <> noise_after_iterations
+R1716:1718 Coq.Init.Datatypes <> nat ind
+binder 1704:1710 <> initial:15
+binder 1712:1712 <> t:16
+R1723:1725 Coq.Init.Datatypes <> nat ind
+R1739:1741 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1732:1738 EncryptedQuantum <> initial:15 var
+R1743:1745 Coq.Init.Nat <> ::nat_scope:x_'*'_x not
+R1742:1742 EncryptedQuantum <> t:16 var
+R1746:1764 EncryptedQuantum <> noise_per_iteration def
+def 1779:1795 <> traditional_noise
+R1810:1812 Coq.Init.Datatypes <> nat ind
+binder 1798:1804 <> initial:17
+binder 1806:1806 <> t:18
+R1817:1819 Coq.Init.Datatypes <> nat ind
+R1833:1836 Coq.Init.Nat <> ::nat_scope:x_'*'_x not
+R1842:1842 Coq.Init.Nat <> ::nat_scope:x_'*'_x not
+R1826:1832 EncryptedQuantum <> initial:17 var
+R1838:1840 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1841:1841 EncryptedQuantum <> t:18 var
+prf 1887:1905 <> noise_linear_better
+R1928:1930 Coq.Init.Datatypes <> nat ind
+binder 1916:1922 <> initial:19
+binder 1924:1924 <> t:20
+R1946:1949 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1942:1944 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R1935:1941 EncryptedQuantum <> initial:19 var
+R1955:1960 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1951:1953 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R1950:1950 EncryptedQuantum <> t:20 var
+R1993:1995 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R1961:1982 EncryptedQuantum <> noise_after_iterations def
+R1984:1990 EncryptedQuantum <> initial:19 var
+R1992:1992 EncryptedQuantum <> t:20 var
+R1996:2012 EncryptedQuantum <> traditional_noise def
+R2014:2020 EncryptedQuantum <> initial:19 var
+R2024:2026 Coq.Init.Nat <> ::nat_scope:x_'*'_x not
+R2023:2023 EncryptedQuantum <> t:20 var
+R2027:2027 EncryptedQuantum <> t:20 var
+R2073:2094 EncryptedQuantum <> noise_after_iterations def
+R2097:2113 EncryptedQuantum <> traditional_noise def
+R2116:2134 EncryptedQuantum <> noise_per_iteration def
+def 2386:2401 <> iteration_factor
+R2405:2407 Coq.Init.Datatypes <> nat ind
+prf 2427:2448 <> can_do_1000_iterations
+R2475:2477 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R2468:2470 Coq.Init.Nat <> ::nat_scope:x_'*'_x not
+R2452:2467 EncryptedQuantum <> iteration_factor def
+R2498:2513 EncryptedQuantum <> iteration_factor def
+def 2560:2573 <> sparse_storage
+R2577:2579 Coq.Init.Datatypes <> nat ind
+prf 2625:2647 <> compression_significant
+R2662:2664 Coq.Init.Datatypes <> nat ind
+binder 2658:2658 <> n:21
+R2675:2678 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2670:2672 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R2669:2669 EncryptedQuantum <> n:21 var
+R2693:2695 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R2679:2692 EncryptedQuantum <> sparse_storage def
+R2697:2699 Coq.Init.Nat <> ::nat_scope:x_'*'_x not
+R2696:2696 EncryptedQuantum <> n:21 var
+R2700:2700 EncryptedQuantum <> n:21 var
+R2734:2747 EncryptedQuantum <> sparse_storage def

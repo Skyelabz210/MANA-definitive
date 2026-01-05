@@ -1,0 +1,235 @@
+warning: value assigned to `giant_steps_done` is never read
+   --> crates/nine65/src/arithmetic/order_finding.rs:388:13
+    |
+388 |     let mut giant_steps_done = 0u64;
+    |             ^^^^^^^^^^^^^^^^
+    |
+    = help: maybe it is overwritten before being read?
+    = note: `#[warn(unused_assignments)]` on by default
+
+warning: `nine65` (lib) generated 1 warning
+warning: `nine65` (lib) generated 1 warning (1 duplicate)
+   Compiling nine65 v0.1.0 (/home/acid/Projects/NINE65/MANA_boosted/crates/nine65)
+warning: unused variable: `negative`
+   --> crates/nine65/benches/nine65_vs_seal_comparison.rs:130:9
+    |
+130 |     let negative = modulus - 123456u64;
+    |         ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_negative`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `x_large`
+   --> crates/nine65/benches/nine65_vs_seal_comparison.rs:215:9
+    |
+215 |     let x_large: i128 = 1 << 20; // 1.0 in scaled form
+    |         ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_x_large`
+
+warning: `nine65` (bench "nine65_vs_seal_comparison") generated 2 warnings
+    Finished `bench` profile [optimized] target(s) in 38.98s
+     Running benches/nine65_vs_seal_comparison.rs (target/release/deps/nine65_vs_seal_comparison-f201bc2a6f6e110f)
+Benchmarking Persistent Montgomery/Montgomery enter
+Benchmarking Persistent Montgomery/Montgomery enter: Warming up for 3.0000 s
+Benchmarking Persistent Montgomery/Montgomery enter: Collecting 100 samples in estimated 5.0000 s (2.1B iterations)
+Benchmarking Persistent Montgomery/Montgomery enter: Analyzing
+Persistent Montgomery/Montgomery enter
+                        time:   [2.2718 ns 2.3073 ns 2.3507 ns]
+Found 6 outliers among 100 measurements (6.00%)
+  4 (4.00%) high mild
+  2 (2.00%) high severe
+Benchmarking Persistent Montgomery/Montgomery mul
+Benchmarking Persistent Montgomery/Montgomery mul: Warming up for 3.0000 s
+Benchmarking Persistent Montgomery/Montgomery mul: Collecting 100 samples in estimated 5.0000 s (1.6B iterations)
+Benchmarking Persistent Montgomery/Montgomery mul: Analyzing
+Persistent Montgomery/Montgomery mul
+                        time:   [3.0322 ns 3.0897 ns 3.1568 ns]
+Found 9 outliers among 100 measurements (9.00%)
+  7 (7.00%) high mild
+  2 (2.00%) high severe
+Benchmarking Persistent Montgomery/Montgomery exit
+Benchmarking Persistent Montgomery/Montgomery exit: Warming up for 3.0000 s
+Benchmarking Persistent Montgomery/Montgomery exit: Collecting 100 samples in estimated 5.0000 s (3.0B iterations)
+Benchmarking Persistent Montgomery/Montgomery exit: Analyzing
+Persistent Montgomery/Montgomery exit
+                        time:   [1.6478 ns 1.6735 ns 1.7042 ns]
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) high mild
+  7 (7.00%) high severe
+
+Benchmarking Order Finding/ord_63(2)
+Benchmarking Order Finding/ord_63(2): Warming up for 3.0000 s
+Benchmarking Order Finding/ord_63(2): Collecting 100 samples in estimated 10.001 s (39M iterations)
+Benchmarking Order Finding/ord_63(2): Analyzing
+Order Finding/ord_63(2) time:   [262.75 ns 266.03 ns 269.71 ns]
+Found 9 outliers among 100 measurements (9.00%)
+  9 (9.00%) high mild
+Benchmarking Order Finding/ord_1000(3)
+Benchmarking Order Finding/ord_1000(3): Warming up for 3.0000 s
+Benchmarking Order Finding/ord_1000(3): Collecting 100 samples in estimated 10.008 s (5.1M iterations)
+Benchmarking Order Finding/ord_1000(3): Analyzing
+Order Finding/ord_1000(3)
+                        time:   [1.9588 µs 1.9826 µs 2.0083 µs]
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+Benchmarking Order Finding/factor_15
+Benchmarking Order Finding/factor_15: Warming up for 3.0000 s
+Benchmarking Order Finding/factor_15: Collecting 100 samples in estimated 10.001 s (18M iterations)
+Benchmarking Order Finding/factor_15: Analyzing
+Order Finding/factor_15 time:   [541.30 ns 546.32 ns 552.64 ns]
+Found 10 outliers among 100 measurements (10.00%)
+  1 (1.00%) low mild
+  6 (6.00%) high mild
+  3 (3.00%) high severe
+Benchmarking Order Finding/factor_3233
+Benchmarking Order Finding/factor_3233: Warming up for 3.0000 s
+Benchmarking Order Finding/factor_3233: Collecting 100 samples in estimated 10.027 s (1.4M iterations)
+Benchmarking Order Finding/factor_3233: Analyzing
+Order Finding/factor_3233
+                        time:   [6.9657 µs 7.0227 µs 7.0878 µs]
+Found 15 outliers among 100 measurements (15.00%)
+  1 (1.00%) low mild
+  7 (7.00%) high mild
+  7 (7.00%) high severe
+
+Benchmarking Sign Detection (MQ-ReLU)/MobiusInt sign
+Benchmarking Sign Detection (MQ-ReLU)/MobiusInt sign: Warming up for 3.0000 s
+Benchmarking Sign Detection (MQ-ReLU)/MobiusInt sign: Collecting 100 samples in estimated 5.0000 s (4.0B iterations)
+Benchmarking Sign Detection (MQ-ReLU)/MobiusInt sign: Analyzing
+Sign Detection (MQ-ReLU)/MobiusInt sign
+                        time:   [1.2220 ns 1.2500 ns 1.2875 ns]
+Found 13 outliers among 100 measurements (13.00%)
+  2 (2.00%) low mild
+  2 (2.00%) high mild
+  9 (9.00%) high severe
+Benchmarking Sign Detection (MQ-ReLU)/MQ-ReLU scalar
+Benchmarking Sign Detection (MQ-ReLU)/MQ-ReLU scalar: Warming up for 3.0000 s
+Benchmarking Sign Detection (MQ-ReLU)/MQ-ReLU scalar: Collecting 100 samples in estimated 5.0000 s (3.5B iterations)
+Benchmarking Sign Detection (MQ-ReLU)/MQ-ReLU scalar: Analyzing
+Sign Detection (MQ-ReLU)/MQ-ReLU scalar
+                        time:   [1.3975 ns 1.4116 ns 1.4296 ns]
+Found 12 outliers among 100 measurements (12.00%)
+  5 (5.00%) high mild
+  7 (7.00%) high severe
+
+Benchmarking Polynomial Operations/Polynomial eval/100
+Benchmarking Polynomial Operations/Polynomial eval/100: Warming up for 3.0000 s
+Benchmarking Polynomial Operations/Polynomial eval/100: Collecting 100 samples in estimated 5.0022 s (7.8M iterations)
+Benchmarking Polynomial Operations/Polynomial eval/100: Analyzing
+Polynomial Operations/Polynomial eval/100
+                        time:   [640.90 ns 646.72 ns 653.50 ns]
+Found 9 outliers among 100 measurements (9.00%)
+  4 (4.00%) high mild
+  5 (5.00%) high severe
+Benchmarking Polynomial Operations/Polynomial eval/1000
+Benchmarking Polynomial Operations/Polynomial eval/1000: Warming up for 3.0000 s
+Benchmarking Polynomial Operations/Polynomial eval/1000: Collecting 100 samples in estimated 5.1074 s (182k iterations)
+Benchmarking Polynomial Operations/Polynomial eval/1000: Analyzing
+Polynomial Operations/Polynomial eval/1000
+                        time:   [27.339 µs 27.592 µs 27.902 µs]
+Found 11 outliers among 100 measurements (11.00%)
+  4 (4.00%) high mild
+  7 (7.00%) high severe
+Benchmarking Polynomial Operations/Polynomial eval/4096
+Benchmarking Polynomial Operations/Polynomial eval/4096: Warming up for 3.0000 s
+Benchmarking Polynomial Operations/Polynomial eval/4096: Collecting 100 samples in estimated 5.2448 s (35k iterations)
+Benchmarking Polynomial Operations/Polynomial eval/4096: Analyzing
+Polynomial Operations/Polynomial eval/4096
+                        time:   [146.99 µs 147.80 µs 148.67 µs]
+Found 5 outliers among 100 measurements (5.00%)
+  1 (1.00%) low mild
+  4 (4.00%) high severe
+
+Benchmarking Quantum Operations/Grover optimal iterations/10
+Benchmarking Quantum Operations/Grover optimal iterations/10: Warming up for 3.0000 s
+Benchmarking Quantum Operations/Grover optimal iterations/10: Collecting 100 samples in estimated 5.0000 s (13B iterations)
+Benchmarking Quantum Operations/Grover optimal iterations/10: Analyzing
+Quantum Operations/Grover optimal iterations/10
+                        time:   [359.54 ps 364.86 ps 371.20 ps]
+Found 8 outliers among 100 measurements (8.00%)
+  1 (1.00%) high mild
+  7 (7.00%) high severe
+Benchmarking Quantum Operations/Grover optimal iterations/15
+Benchmarking Quantum Operations/Grover optimal iterations/15: Warming up for 3.0000 s
+Benchmarking Quantum Operations/Grover optimal iterations/15: Collecting 100 samples in estimated 5.0000 s (14B iterations)
+Benchmarking Quantum Operations/Grover optimal iterations/15: Analyzing
+Quantum Operations/Grover optimal iterations/15
+                        time:   [360.33 ps 365.85 ps 372.76 ps]
+Found 11 outliers among 100 measurements (11.00%)
+  3 (3.00%) high mild
+  8 (8.00%) high severe
+Benchmarking Quantum Operations/Grover optimal iterations/20
+Benchmarking Quantum Operations/Grover optimal iterations/20: Warming up for 3.0000 s
+Benchmarking Quantum Operations/Grover optimal iterations/20: Collecting 100 samples in estimated 5.0000 s (13B iterations)
+Benchmarking Quantum Operations/Grover optimal iterations/20: Analyzing
+Quantum Operations/Grover optimal iterations/20
+                        time:   [369.12 ps 374.42 ps 380.40 ps]
+Found 8 outliers among 100 measurements (8.00%)
+  2 (2.00%) high mild
+  6 (6.00%) high severe
+
+Benchmarking ML Operations/Integer Softmax/10
+Benchmarking ML Operations/Integer Softmax/10: Warming up for 3.0000 s
+Benchmarking ML Operations/Integer Softmax/10: Collecting 100 samples in estimated 5.0021 s (2.2M iterations)
+Benchmarking ML Operations/Integer Softmax/10: Analyzing
+ML Operations/Integer Softmax/10
+                        time:   [2.2223 µs 2.2453 µs 2.2725 µs]
+Found 13 outliers among 100 measurements (13.00%)
+  5 (5.00%) high mild
+  8 (8.00%) high severe
+Benchmarking ML Operations/Integer Softmax/100
+Benchmarking ML Operations/Integer Softmax/100: Warming up for 3.0000 s
+Benchmarking ML Operations/Integer Softmax/100: Collecting 100 samples in estimated 5.1015 s (232k iterations)
+Benchmarking ML Operations/Integer Softmax/100: Analyzing
+ML Operations/Integer Softmax/100
+                        time:   [21.998 µs 22.241 µs 22.542 µs]
+Found 10 outliers among 100 measurements (10.00%)
+  3 (3.00%) high mild
+  7 (7.00%) high severe
+Benchmarking ML Operations/Integer Softmax/1000
+Benchmarking ML Operations/Integer Softmax/1000: Warming up for 3.0000 s
+Benchmarking ML Operations/Integer Softmax/1000: Collecting 100 samples in estimated 5.5112 s (25k iterations)
+Benchmarking ML Operations/Integer Softmax/1000: Analyzing
+ML Operations/Integer Softmax/1000
+                        time:   [216.59 µs 219.01 µs 221.87 µs]
+Found 14 outliers among 100 measurements (14.00%)
+  4 (4.00%) low mild
+  2 (2.00%) high mild
+  8 (8.00%) high severe
+Benchmarking ML Operations/MQ-ReLU Poly (4096)
+Benchmarking ML Operations/MQ-ReLU Poly (4096): Warming up for 3.0000 s
+Benchmarking ML Operations/MQ-ReLU Poly (4096): Collecting 100 samples in estimated 5.0290 s (712k iterations)
+Benchmarking ML Operations/MQ-ReLU Poly (4096): Analyzing
+ML Operations/MQ-ReLU Poly (4096)
+                        time:   [6.8180 µs 6.8712 µs 6.9383 µs]
+Found 12 outliers among 100 measurements (12.00%)
+  4 (4.00%) high mild
+  8 (8.00%) high severe
+
+Benchmarking Padé Transcendentals/Padé exp
+Benchmarking Padé Transcendentals/Padé exp: Warming up for 3.0000 s
+Benchmarking Padé Transcendentals/Padé exp: Collecting 100 samples in estimated 5.0001 s (32M iterations)
+Benchmarking Padé Transcendentals/Padé exp: Analyzing
+Padé Transcendentals/Padé exp
+                        time:   [155.63 ns 157.15 ns 158.88 ns]
+Found 12 outliers among 100 measurements (12.00%)
+  3 (3.00%) high mild
+  9 (9.00%) high severe
+Benchmarking Padé Transcendentals/Padé sin
+Benchmarking Padé Transcendentals/Padé sin: Warming up for 3.0000 s
+Benchmarking Padé Transcendentals/Padé sin: Collecting 100 samples in estimated 5.0002 s (63M iterations)
+Benchmarking Padé Transcendentals/Padé sin: Analyzing
+Padé Transcendentals/Padé sin
+                        time:   [77.554 ns 78.336 ns 79.364 ns]
+Found 12 outliers among 100 measurements (12.00%)
+  3 (3.00%) high mild
+  9 (9.00%) high severe
+Benchmarking Padé Transcendentals/Padé sigmoid
+Benchmarking Padé Transcendentals/Padé sigmoid: Warming up for 3.0000 s
+Benchmarking Padé Transcendentals/Padé sigmoid: Collecting 100 samples in estimated 5.0005 s (28M iterations)
+Benchmarking Padé Transcendentals/Padé sigmoid: Analyzing
+Padé Transcendentals/Padé sigmoid
+                        time:   [175.51 ns 177.28 ns 179.18 ns]
+Found 10 outliers among 100 measurements (10.00%)
+  6 (6.00%) high mild
+  4 (4.00%) high severe
+

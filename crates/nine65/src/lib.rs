@@ -105,6 +105,7 @@ pub mod noise;     // CDHS-based noise tracking
 pub mod security;  // LWE security estimation
 pub mod kat;       // Known Answer Tests
 pub mod quantum;   // QMNF algebraic quantum operations
+pub mod errors;    // Standardized NINE65 error taxonomy
 
 #[cfg(feature = "accelerated")]
 pub mod accelerated;  // MANA/UNHAL acceleration layer
@@ -190,6 +191,9 @@ pub mod prelude {
     
     // Security estimation
     pub use crate::security::{LWEParams, SecurityEstimate, ConfidenceLevel};
+
+    // Error taxonomy
+    pub use crate::errors::{Nine65Error, Nine65Result};
 }
 
 #[cfg(test)]

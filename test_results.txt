@@ -1,0 +1,431 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.08s
+     Running unittests src/lib.rs (target/debug/deps/mana-5450a0fffe8a1bd1)
+
+running 30 tests
+test anchor::tests::test_fhe_anchor ... ok
+test anchor::tests::test_exact_division ... ok
+test anchor::tests::test_k_anchor_basic ... ok
+test anchor::tests::test_scale_and_round ... ok
+test gso::tests::test_agent_luciferin_update ... ok
+test gso::tests::test_qbit_measure_deterministic ... ok
+test gso::tests::test_qbit_rotation ... ok
+test gso::tests::test_qbit_uniform ... ok
+test gso::tests::test_gso_swarm_iteration ... ok
+test lane::tests::test_lane_add ... ok
+test lane::tests::test_lane_mul ... ok
+test lane::tests::test_lane_neg ... ok
+test lane::tests::test_lane_sub ... ok
+test lane::tests::test_lane_sub_wrap ... ok
+test lane::tests::test_montgomery_mul ... ok
+test lane::tests::test_montgomery_roundtrip ... ok
+test lane::tests::test_persistent_lane_add ... ok
+test lane::tests::test_persistent_lane_chain ... ok
+test lane::tests::test_persistent_lane_mul ... ok
+test lane::tests::test_persistent_vs_regular_mul ... ok
+test stream::tests::test_crt_reconstruction ... ok
+test stream::tests::test_large_value_reconstruction ... ok
+test stream::tests::test_stream_add ... ok
+test stream::tests::test_stream_mul ... ok
+test parallel::tests::test_parallel_mul ... ok
+test parallel::tests::test_parallel_ntt ... ok
+test parallel::tests::test_batch_operations ... ok
+test parallel::tests::test_parallel_add ... ok
+test parallel::tests::test_parallel_vs_sequential ... ok
+test lane::tests::test_persistent_lane_benchmark ... ok
+
+test result: ok. 30 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running unittests src/lib.rs (target/debug/deps/nine65-dba9462b3416e580)
+
+running 338 tests
+test ahop::grover::tests::test_grover_3qubit ... ok
+test ahop::grover::tests::test_grover_2qubit ... ok
+test accelerated::tests::test_rns_stream_roundtrip ... ok
+test ahop::grover::tests::test_grover_6qubit_scale ... ok
+test ahop::grover::tests::test_grover_4qubit ... ok
+test ahop::tests::test_fp2_add ... ok
+test ahop::tests::test_fp2_conj ... ok
+test ahop::tests::test_fp2_norm_squared ... ok
+test ahop::tests::test_fp2_inverse ... ok
+test ahop::tests::test_state_uniform ... ok
+test ahop::tests::test_state_inner_product ... ok
+test ahop::tests::test_probability ... ok
+test ahop::tests::test_fp2_mul ... ok
+test arithmetic::barrett::tests::test_barrett_mul ... ok
+test arithmetic::barrett::tests::test_barrett_reduce ... ok
+test arithmetic::barrett::tests::test_barrett_reduce_large ... ok
+test arithmetic::barrett::tests::test_barrett_pow ... ok
+test arithmetic::barrett::tests::test_hybrid_context ... ok
+test arithmetic::barrett::tests::test_barrett_vs_naive ... ok
+test arithmetic::ct_mul_exact::tests::test_exact_poly_mul_constant ... ignored
+test arithmetic::cyclotomic_phase::tests::test_modular_distance ... ok
+test arithmetic::ct_mul_exact::tests::test_exact_rescale ... ok
+test accelerated::tests::test_accelerated_add ... ok
+test arithmetic::cyclotomic_phase::tests::test_sine_cosine_extraction ... ok
+test arithmetic::exact_coeff::tests::test_add ... ok
+test arithmetic::exact_coeff::tests::test_delta_squared_scaling ... ok
+test arithmetic::exact_coeff::tests::test_mul ... ok
+test arithmetic::exact_divider::tests::test_exact_divide ... ok
+test arithmetic::exact_coeff::tests::test_encode_reconstruct ... ok
+test arithmetic::exact_coeff::tests::test_exact_div ... ok
+test arithmetic::exact_divider::tests::test_fhe_params ... ok
+test arithmetic::exact_divider::tests::test_reconstruct_basic ... ok
+test arithmetic::exact_divider::tests::test_scale_and_round ... ok
+test arithmetic::integer_softmax::tests::test_softmax_equal_logits ... ok
+test arithmetic::integer_softmax::tests::test_softmax_single ... ok
+test arithmetic::integer_softmax::tests::test_softmax_ordering ... ok
+test arithmetic::exact_divider::tests::test_roundtrip ... ok
+test arithmetic::integer_softmax::tests::test_softmax_sum_exact ... ok
+test arithmetic::k_elimination::tests::test_fhe_rescaling ... ok
+test arithmetic::k_elimination::tests::test_exact_division ... ok
+test arithmetic::k_elimination::tests::test_scale_and_round ... ok
+test arithmetic::k_elimination::tests::test_k_elimination_basic ... ok
+test arithmetic::k_elimination::tests::test_large_values ... ok
+test arithmetic::mobius_int::tests::test_chained_operations ... ok
+test arithmetic::mobius_int::tests::test_addition ... ok
+test arithmetic::mobius_int::tests::test_comparison ... ok
+test arithmetic::mobius_int::tests::test_from_i64 ... ok
+test arithmetic::mobius_int::tests::test_many_chained_operations ... ok
+test arithmetic::mobius_int::tests::test_multiplication ... ok
+test arithmetic::mobius_int::tests::test_polynomial_arithmetic ... ok
+test arithmetic::mobius_int::tests::test_polynomial_eval ... ok
+test arithmetic::mobius_int::tests::test_polynomial_multiplication ... ok
+test arithmetic::mobius_int::tests::test_vector_operations ... ok
+test arithmetic::mobius_int::tests::test_subtraction ... ok
+test arithmetic::montgomery::tests::test_montgomery_add_sub ... ok
+test arithmetic::montgomery::tests::test_montgomery_pow ... ok
+test arithmetic::montgomery::tests::test_montgomery_roundtrip ... ok
+test arithmetic::mq_relu::tests::test_polynomial_relu ... ok
+test arithmetic::mq_relu::tests::test_sign_detection ... ok
+test arithmetic::mq_relu::tests::test_relu_application ... ok
+test arithmetic::mq_relu::tests::test_signed_conversion ... ok
+test arithmetic::ntt::tests::test_ntt_multiply_correctness_small ... ok
+test arithmetic::ntt::tests::test_ntt_multiply_random ... ok
+test arithmetic::ntt::tests::test_ntt_negacyclic ... ok
+test ahop::grover::tests::test_grover_no_decoherence_1000 ... ok
+test arithmetic::ntt::tests::test_ntt_roundtrip ... ok
+test arithmetic::ntt::tests::test_polynomial_add ... ok
+test arithmetic::ntt::tests::test_polynomial_sub ... ok
+test arithmetic::montgomery::tests::test_montgomery_mul ... ok
+test arithmetic::ntt_fft::tests::test_multiply_small ... ok
+test arithmetic::ntt_fft::tests::test_negacyclic ... ok
+test arithmetic::ntt_fft::tests::test_ntt_intt_roundtrip ... ok
+test arithmetic::ntt_fft::tests::test_vs_schoolbook ... ok
+test arithmetic::pade_engine::tests::test_cos_at_zero ... ok
+test arithmetic::pade_engine::tests::test_exp_at_zero ... ok
+test arithmetic::pade_engine::tests::test_sigmoid_at_zero ... ok
+test arithmetic::pade_engine::tests::test_sin_at_zero ... ok
+test arithmetic::pade_engine::tests::test_tanh_symmetry ... ok
+test arithmetic::montgomery::tests::test_montgomery_benchmark ... ok
+test arithmetic::persistent_montgomery::tests::test_inverse ... ok
+test arithmetic::persistent_montgomery::tests::test_montgomery_mul ... ok
+test arithmetic::persistent_montgomery::tests::test_montgomery_roundtrip ... ok
+test arithmetic::persistent_montgomery::tests::test_one_value ... ok
+test arithmetic::persistent_montgomery::tests::test_persistent_chain ... ok
+test arithmetic::barrett::tests::test_barrett_benchmark ... ok
+test arithmetic::persistent_montgomery::tests::test_polynomial_ops ... ok
+test arithmetic::persistent_montgomery::tests::test_pow ... ok
+test arithmetic::rns::tests::test_dual_rns_exact_division ... ok
+test ahop::grover::tests::test_grover_extreme_10000 ... ok
+test arithmetic::rns::tests::test_dual_rns_fhe_capacity ... ok
+test arithmetic::rns::tests::test_dual_rns_k_elimination_basic ... ok
+test arithmetic::rns::tests::test_dual_rns_polynomial_operations ... ok
+test arithmetic::rns::tests::test_k_elim_rescale ... ok
+test arithmetic::rns::tests::test_rns_add ... ok
+test arithmetic::rns::tests::test_rns_mul ... ok
+test arithmetic::rns::tests::test_rns_polynomial_add ... ok
+test arithmetic::rns::tests::test_rns_polynomial_mul ... ok
+test arithmetic::rns::tests::test_rns_roundtrip ... ok
+test arithmetic::rns::tests::test_dual_rns_fhe_full_chain ... ok
+test arithmetic::persistent_montgomery::tests::test_zero_conversion_overhead ... ok
+test entropy::crt_shadow::tests::test_compare_magnitudes_via_signature ... ok
+test entropy::crt_shadow::tests::test_crt_basic ... ok
+test entropy::crt_shadow::tests::test_entropy_quality ... ok
+test entropy::crt_shadow::tests::test_entropy_throughput ... ok
+test entropy::crt_shadow::tests::test_integrated_rns ... ok
+test entropy::crt_shadow::tests::test_large_numbers ... ok
+test entropy::crt_shadow::tests::test_mul_with_shadows ... ok
+test entropy::crt_shadow::tests::test_mul_with_signature ... ok
+test entropy::crt_shadow::tests::test_quotient_signature_add ... ok
+test entropy::crt_shadow::tests::test_quotient_signature_basic ... ok
+test entropy::crt_shadow::tests::test_quotient_signature_comparison ... ok
+test entropy::crt_shadow::tests::test_quotient_signature_magnitude_class ... ok
+test entropy::crt_shadow::tests::test_quotient_signature_mul ... ok
+test entropy::crt_shadow::tests::test_shadow_accumulator ... ok
+test entropy::crt_shadow::tests::test_shadow_determinism ... ok
+test entropy::crt_shadow::tests::test_shadow_variation ... ok
+test entropy::crt_shadow::tests::test_signature_is_small_large ... ok
+test entropy::crt_shadow::tests::test_signature_ordering_consistency ... ok
+test entropy::secure::tests::test_secure_bytes ... ok
+test entropy::secure::tests::test_secure_cbd ... ok
+test entropy::secure::tests::test_secure_ternary_distribution ... ok
+test entropy::secure::tests::test_secure_u64_bounded ... ok
+test entropy::secure::tests::test_secure_vectors ... ok
+test entropy::shadow::tests::test_bounded_uniform ... ok
+test entropy::shadow::tests::test_cbd_mean ... ok
+test entropy::shadow::tests::test_cbd_range ... ok
+test entropy::shadow::tests::test_deterministic ... ok
+test entropy::shadow::tests::test_different_seeds ... ok
+test entropy::shadow::tests::test_no_obvious_patterns ... ok
+test entropy::shadow::tests::test_signed_to_unsigned ... ok
+test entropy::crt_shadow::tests::test_benchmark_signature_overhead ... ok
+test entropy::wassan_noise::tests::test_benchmark_vs_shadow ... ok
+test entropy::shadow::tests::test_ternary_distribution ... ok
+test entropy::wassan_noise::tests::test_creation ... ok
+test entropy::wassan_noise::tests::test_cbd_noise ... ok
+test entropy::wassan_noise::tests::test_fhe_noise_polynomial_benchmark ... ok
+test entropy::wassan_noise::tests::test_polynomial_generation ... ok
+test arithmetic::persistent_montgomery::tests::test_benchmark_montgomery ... ok
+test entropy::wassan_noise::tests::test_sample_deterministic ... ok
+test entropy::wassan_noise::tests::test_ternary_distribution ... ok
+test integration_tests::test_grover_integration ... ok
+test integration_tests::test_production_128bit ... ignored
+test integration_tests::test_benchmarks ... ok
+test integration_tests::test_full_fhe_workflow ... ok
+test kat::tests::test_kat_deterministic ... ok
+test kat::tests::test_kat_homomorphic_ops ... ok
+test kat::tests::test_kat_encrypt_decrypt ... ok
+test keys::tests::test_keygen_basic ... ok
+test keys::tests::test_encrypt_decrypt_with_secure_keys ... ok
+test kat::tests::test_all_kats ... ok
+test keys::tests::test_keygen_deterministic ... ok
+test keys::tests::test_keygen_secure ... ok
+test keys::tests::test_secure_key_is_ternary ... ok
+test noise::budget::tests::test_he_standard_budget ... ok
+test noise::budget::tests::test_noise_budget_consumption ... ok
+test noise::budget::tests::test_noise_budget_creation ... ok
+test noise::budget::tests::test_noise_budget_exhaustion ... ok
+test noise::budget::tests::test_noise_budget_tracking ... ok
+test noise::budget::tests::test_remaining_multiplications ... ok
+test noise::tests::test_budget_utilization ... ok
+test noise::tests::test_ema_calculation ... ok
+test noise::tests::test_integer_sqrt ... ok
+test noise::tests::test_multi_window_detector ... ok
+test noise::tests::test_noise_budget_exhaustion ... ok
+test noise::tests::test_noise_budget_tracker ... ok
+test noise::tests::test_noise_distribution ... ok
+test noise::tests::test_noise_window ... ok
+test noise::tests::test_p2_large_stream ... ok
+test noise::tests::test_p2_o1_memory ... ok
+test noise::tests::test_p2_quantile_median ... ok
+test noise::tests::test_p2_quantile_p95 ... ok
+test noise::tests::test_remaining_muls_estimate ... ok
+test ops::encrypt::tests::test_encode_decode ... ok
+test entropy::crt_shadow::tests::test_benchmark_throughput ... ok
+test arithmetic::ntt_fft::tests::test_benchmark_4096 ... ok
+test ops::encrypt::tests::test_encrypt_decrypt_roundtrip ... ok
+test ops::encrypt::tests::test_encrypt_decrypt_random ... ok
+test ops::encrypt::tests::test_encrypt_deterministic ... ok
+test arithmetic::ct_mul_exact::tests::test_exact_ct_mul_simple ... ok
+test keys::tests::test_keygen_benchmark ... ok
+test keys::tests::test_keygen_secure_benchmark ... ok
+test ops::gso_fhe::tests::test_basin_geometry ... ok
+test ops::gso_fhe::tests::test_collapse_time ... ok
+test arithmetic::ntt_fft::tests::test_benchmark_1024 ... ok
+test ops::gso_fhe::tests::test_gso_add ... ok
+test ops::gso_fhe::tests::test_gso_encrypt_decrypt ... ok
+test ops::gso_fhe::depth_benchmarks::benchmark_entropy_during_fhe ... ok
+test ops::gso_fhe::tests::test_gso_mul_public_depth1 ... ok
+test ops::gso_fhe::tests::test_gso_mul_symmetric ... ok
+test ops::gso_fhe::tests::test_gso_mul_public_depth2 ... ok
+test ops::homomorphic::tests::test_add_plain ... ok
+test ops::homomorphic::tests::test_ct_mul_multiple_values ... ok
+test ops::homomorphic::tests::test_encrypt_decrypt_light_mul ... ok
+test ops::gso_fhe::tests::test_gso_mul_symmetric_depth2 ... ok
+test ops::gso_fhe::tests::test_gso_deep_symmetric ... ok
+test ops::homomorphic::tests::test_homomorphic_add ... ok
+test ops::homomorphic::tests::test_homomorphic_mul_diagnostic ... ok
+test ops::gso_fhe::depth_benchmarks::benchmark_full_system_integration ... ok
+test ops::homomorphic::tests::test_homomorphic_mul_no_relin ... ok
+test ops::homomorphic::tests::test_mul_degree2_decrypt ... ok
+test ops::homomorphic::tests::test_homomorphic_mul_with_relin ... ok
+test ops::homomorphic::tests::test_negate ... ok
+test ops::homomorphic::tests::test_ntt_basic_multiply ... ok
+test ops::homomorphic::tests::test_mul_plain ... ok
+test ops::homomorphic::tests::test_scaling_comparison ... ok
+test ops::homomorphic::tests::test_subtraction ... ok
+test ops::homomorphic::tests::test_relinearization_trace ... ok
+test ops::neural::tests::test_dense_layer_identity ... ok
+test ops::neural::tests::test_relu_negative ... ok
+test ops::neural::tests::test_relu_positive ... ok
+test ops::neural::tests::test_sigmoid_at_zero ... ok
+test ops::neural::tests::test_signed_conversion_roundtrip ... ok
+test ops::neural::tests::test_softmax_exact_sum ... ok
+test ops::rns_fhe::tests::bench_intt_rescale_cost ... ignored, Timing test - run manually with --nocapture
+test ops::homomorphic::tests::test_tensor_product_trace ... ok
+test ops::rns_fhe::tests::test_anchor_ntt_roundtrip ... ok
+test ops::rns_fhe::tests::test_anchor_ntt_multiplication_correctness ... ok
+test ops::homomorphic::tests::test_homo_add_benchmark ... ok
+test ops::rns_fhe::tests::test_auto_routing ... ok
+test ops::rns_fhe::tests::test_auto_routing_chained_operations ... ok
+test ops::rns_fhe::tests::test_ciphertext_consistency ... ignored, Uses anchor.to_int() which overflows u128. Use assert_main_anchor_consistent() instead.
+test ops::rns_fhe::tests::test_coeff_domain_capacity_analysis ... ok
+test ops::rns_fhe::tests::test_coeff_domain_full_ct_mul ... ok
+test ops::rns_fhe::tests::test_coeff_domain_trivial_ct_mul ... ok
+test ops::rns_fhe::tests::test_chain_via_auto ... ok
+test ops::rns_fhe::tests::test_dual_poly_mul_consistency ... ignored, Uses anchor.to_int() which overflows u128. Use assert_main_anchor_consistent() instead.
+test ops::rns_fhe::tests::test_dual_rns_ct_mul_capacity_analysis ... ok
+test ops::rns_fhe::tests::test_dual_rns_encrypt_decrypt ... ok
+test ops::rns_fhe::tests::test_dual_rns_trivial_ct_mul ... ok
+test ops::homomorphic::tests::test_homo_mul_benchmark ... ok
+test ops::rns_fhe::tests::test_e2_s2_k_source ... ok
+test ops::rns_fhe::tests::test_mul_dual_anchor_consistency_trace ... ignored, Uses anchor.to_int() which overflows u128. Use assert_main_anchor_consistent() instead.
+test ops::rns_fhe::tests::test_mul_dual_debug ... ignored, Uses anchor.to_int() which overflows u128. Use assert_main_anchor_consistent() instead.
+test ops::rns_fhe::tests::test_k_elim_rescale_direct ... ok
+test ops::rns_fhe::tests::test_mul_dual_public_mode_deep ... ignored
+test ops::rns_fhe::tests::test_centered_representative_invariant ... ok
+test ops::rns_fhe::tests::test_ntt_domain_capacity_analysis ... ok
+test ops::rns_fhe::tests::test_ntt_domain_full_ct_mul ... ok
+test ops::rns_fhe::tests::test_ntt_domain_trivial_ct_mul ... ok
+test ops::rns_fhe::tests::test_ntt_main_anchor_consistency ... ok
+test ops::rns_fhe::tests::test_ntt_mul_residues ... ignored, Uses anchor.to_int() which overflows u128. Use assert_main_anchor_consistent() instead.
+test ops::encrypt::tests::test_encrypt_benchmark ... ok
+test ops::rns_fhe::tests::test_ntt_roundtrip_consistency ... ok
+test ops::rns_fhe::tests::test_ntt_multiply_consistency ... ok
+test ops::rns_fhe::tests::test_mul_dual_trace_smoke ... ok
+test ops::rns_fhe::tests::test_ntt_ternary_mul ... ok
+test ops::rns_fhe::tests::test_compare_symmetric_vs_public ... ok
+test ops::rns_fhe::tests::test_mul_dual_public_mode ... ok
+test ops::rns_fhe::tests::test_regime_mismatch_encrypt_single_keys_dual_route - should panic ... ok
+test ops::rns_fhe::tests::test_regime_mismatch_add_mixed_ciphertexts - should panic ... ok
+test ops::rns_fhe::tests::test_regime_mismatch_mul_mixed_ciphertexts - should panic ... ok
+test ops::rns_fhe::tests::test_result_times_different_fresh ... ok
+test ops::rns_fhe::tests::test_result_times_fresh ... ok
+test ops::rns_fhe::tests::test_rns_exact_encrypt_decrypt ... ok
+test ops::rns_fhe::tests::test_rns_exact_multiplication ... ok
+test ops::rns_fhe::tests::test_rns_multiplication_chain ... ok
+test ops::rns_fhe::tests::test_rns_exact_multiplication_chain ... ok
+test ops::rns_fhe::tests::test_rns_native_addition ... ok
+test ops::rns_fhe::tests::test_rns_native_encrypt_decrypt ... ok
+test ops::rns_fhe::tests::test_rns_simple_add_mul ... ok
+test ops::rns_fhe::tests::test_tree_mul_deep_passes ... ignored, Requires deep_128 config which may be slow to initialize
+test ops::gso_fhe::depth_benchmarks::benchmark_symmetric_max_depth ... ok
+test ops::rns_fhe::tests::test_rns_native_multiplication ... ok
+test ops::rns_fhe::tests::test_tree_mul_light_diagnostic ... ok
+test ops::rns_mul::tests::test_rns_mul_multiple_values ... ignored
+test ops::rns_mul::tests::test_rns_mul_with_relin ... ignored
+test params::primes::tests::test_find_primitive_root ... ok
+test params::primes::tests::test_gcd ... ok
+test params::primes::tests::test_mod_inverse ... ok
+test params::primes::tests::test_mod_pow ... ok
+test params::primes::tests::test_primes_are_prime ... ok
+test params::primes::tests::test_primes_ntt_compatible_4096 ... ok
+test params::primes::tests::test_primes_ntt_compatible_8192 ... ok
+test params::primes::tests::test_primes_pairwise_coprime ... ok
+test params::primes::tests::test_product_security_128bit ... ok
+test params::production::tests::test_modulus_chain ... ok
+test params::production::tests::test_primes_are_coprime ... ok
+test params::production::tests::test_primes_are_ntt_compatible ... ok
+test params::production::tests::test_production_config_128 ... ok
+test params::production::tests::test_production_config_deep ... ok
+test params::tests::test_all_configs_valid ... ok
+test params::tests::test_custom_config ... ok
+test params::tests::test_estimated_depth ... ok
+test params::tests::test_he_standard_compliance ... ok
+test params::validation::tests::test_assert_invalid_panics - should panic ... ok
+test params::validation::tests::test_he_standard_compliance ... ok
+test params::validation::tests::test_large_n_valid ... ok
+test params::validation::tests::test_large_q_fails ... ok
+test params::validation::tests::test_max_safe_n ... ok
+test params::validation::tests::test_standard_params_valid ... ok
+test quantum::amplitude::tests::test_amplitude_creation ... ok
+test quantum::amplitude::tests::test_flip_sign ... ok
+test quantum::amplitude::tests::test_grover_diffusion ... ok
+test quantum::amplitude::tests::test_grover_search_small ... ok
+test quantum::amplitude::tests::test_oracle_creates_negative ... ok
+test ops::rns_mul::tests::test_rns_mul_basic ... ok
+test quantum::entanglement::tests::test_correlation ... ok
+test quantum::entanglement::tests::test_entangled_pair ... ok
+test quantum::entanglement::tests::test_ghz_state ... ok
+test quantum::entanglement::tests::test_many_pairs ... ok
+test quantum::entanglement::tests::test_bell_inequality ... ok
+test quantum::teleport::tests::test_basic_teleportation ... ok
+test quantum::teleport::tests::test_blind_receive ... ok
+test quantum::teleport::tests::test_entanglement_properties ... ok
+test quantum::teleport::tests::test_large_teleportation ... ok
+test quantum::teleport::tests::test_teleportation_demo ... ok
+test quantum::tests::test_full_quantum_stack ... ok
+test quantum::tests::test_quantum_demo_runs ... ok
+test ring::polynomial::tests::test_exact_scalar_div ... ok
+test ring::polynomial::tests::test_infinity_norm ... ok
+test ring::polynomial::tests::test_negation ... ok
+test ring::polynomial::tests::test_ring_add_commutative ... ok
+test ring::polynomial::tests::test_ring_mul_associative ... ok
+test ring::polynomial::tests::test_ring_negacyclic ... ok
+test ring::polynomial::tests::test_scalar_mul ... ok
+test ring::polynomial::tests::test_signed_coeffs ... ok
+test ring::polynomial::tests::test_ternary_polynomial ... ok
+test security::tests::test_all_configs_security ... ok
+test security::tests::test_he_standard_estimate ... ok
+test security::tests::test_lwe_params_from_config ... ok
+test security::tests::test_max_log_q ... ok
+test security::tests::test_security_levels ... ok
+test v2_integration_tests::v2_integration_tests::test_fft_1024_benchmark ... ok
+test v2_integration_tests::v2_integration_tests::test_fft_matches_dft ... ok
+test v2_integration_tests::v2_integration_tests::test_fft_negacyclic ... ok
+test v2_integration_tests::v2_integration_tests::test_fft_ntt_roundtrip ... ok
+test quantum::teleport::tests::benchmark_teleportation ... ok
+test v2_integration_tests::v2_integration_tests::test_wassan_benchmark ... ok
+test v2_integration_tests::v2_integration_tests::test_wassan_deterministic ... ok
+test v2_integration_tests::v2_integration_tests::test_wassan_polynomial ... ok
+test v2_integration_tests::v2_integration_tests::test_wassan_ternary_distribution ... ok
+test ops::rns_fhe::tests::test_tree_mul_phase_error_trace ... ok
+test v2_integration_tests::v2_integration_tests::test_v2_speedup_summary ... ok
+test ops::rns_fhe::tests::test_public_mode_depth2_phase_trace ... ok
+test ops::rns_fhe::tests::test_random_expressions_depth3 ... ok
+test ops::rns_fhe::tests::test_random_expressions_kelim_dual ... ok
+test ops::gso_fhe::arithmetic_benchmarks::benchmark_full_arithmetic ... ok
+test arithmetic::ntt::tests::test_ntt_benchmark_1024 ... ok
+
+test result: ok. 326 passed; 0 failed; 12 ignored; 0 measured; 0 filtered out; finished in 22.47s
+
+     Running unittests src/lib.rs (target/debug/deps/unhal-c319e93faf0692e6)
+
+running 10 tests
+test accelerator::tests::test_accelerator_auto ... ok
+test accelerator::tests::test_add_streams ... ok
+test batch::tests::test_batch_add ... ok
+test accelerator::tests::test_sum_streams ... ok
+test batch::tests::test_reduce_add ... ok
+test batch::tests::test_broadcast_add ... ok
+test pipeline::tests::test_pipeline_chain ... ok
+test pipeline::tests::test_pipeline_add ... ok
+test pipeline::tests::test_pipeline_negate ... ok
+test batch::tests::test_reduce_add_par ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests mana
+
+running 1 test
+test crates/mana/src/parallel.rs - parallel (line 14) ... ignored
+
+test result: ok. 0 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests nine65
+
+running 12 tests
+test crates/nine65/src/accelerated.rs - accelerated (line 14) ... ignored
+test crates/nine65/src/entropy/crt_shadow.rs - entropy::crt_shadow (line 29) ... ignored
+test crates/nine65/src/entropy/crt_shadow.rs - entropy::crt_shadow::QuotientSignature (line 636) ... ignored
+test crates/nine65/src/kat.rs - kat (line 14) ... ignored
+test crates/nine65/src/keys/mod.rs - keys (line 13) ... ignored
+test crates/nine65/src/keys/mod.rs - keys::KeySet::generate_secure (line 258) ... ignored
+test crates/nine65/src/lib.rs - (line 24) ... ignored
+test crates/nine65/src/lib.rs - (line 50) ... ignored
+test crates/nine65/src/lib.rs - prelude (line 119) ... ignored
+test crates/nine65/src/noise/budget.rs - noise::budget (line 14) ... ignored
+test crates/nine65/src/noise/budget.rs - noise::budget (line 9) ... ignored
+test crates/nine65/src/quantum/mod.rs - quantum (line 25) ... ignored
+
+test result: ok. 0 passed; 0 failed; 12 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests unhal
+
+running 3 tests
+test crates/unhal/src/accelerator.rs - accelerator (line 10) ... ignored
+test crates/unhal/src/lib.rs - (line 31) ... ignored
+test crates/unhal/src/pipeline.rs - pipeline (line 7) ... ignored
+
+test result: ok. 0 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

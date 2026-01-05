@@ -1,0 +1,739 @@
+   Compiling nine65 v0.1.0 (/home/acid/Projects/NINE65/MANA_boosted/crates/nine65)
+    Finished `bench` profile [optimized] target(s) in 48.00s
+     Running unittests src/lib.rs (target/release/deps/mana-28611ba08510e2f2)
+
+running 30 tests
+test anchor::tests::test_exact_division ... ignored
+test anchor::tests::test_fhe_anchor ... ignored
+test anchor::tests::test_k_anchor_basic ... ignored
+test anchor::tests::test_scale_and_round ... ignored
+test gso::tests::test_agent_luciferin_update ... ignored
+test gso::tests::test_gso_swarm_iteration ... ignored
+test gso::tests::test_qbit_measure_deterministic ... ignored
+test gso::tests::test_qbit_rotation ... ignored
+test gso::tests::test_qbit_uniform ... ignored
+test lane::tests::test_lane_add ... ignored
+test lane::tests::test_lane_mul ... ignored
+test lane::tests::test_lane_neg ... ignored
+test lane::tests::test_lane_sub ... ignored
+test lane::tests::test_lane_sub_wrap ... ignored
+test lane::tests::test_montgomery_mul ... ignored
+test lane::tests::test_montgomery_roundtrip ... ignored
+test lane::tests::test_persistent_lane_add ... ignored
+test lane::tests::test_persistent_lane_benchmark ... ignored
+test lane::tests::test_persistent_lane_chain ... ignored
+test lane::tests::test_persistent_lane_mul ... ignored
+test lane::tests::test_persistent_vs_regular_mul ... ignored
+test parallel::tests::test_batch_operations ... ignored
+test parallel::tests::test_parallel_add ... ignored
+test parallel::tests::test_parallel_mul ... ignored
+test parallel::tests::test_parallel_ntt ... ignored
+test parallel::tests::test_parallel_vs_sequential ... ignored
+test stream::tests::test_crt_reconstruction ... ignored
+test stream::tests::test_large_value_reconstruction ... ignored
+test stream::tests::test_stream_add ... ignored
+test stream::tests::test_stream_mul ... ignored
+
+test result: ok. 0 passed; 0 failed; 30 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running benches/lane_ops.rs (target/release/deps/lane_ops-fb897708e4a7b61d)
+Benchmarking lane_add/sequential/2048
+Benchmarking lane_add/sequential/2048: Warming up for 3.0000 s
+Benchmarking lane_add/sequential/2048: Collecting 100 samples in estimated 5.0035 s (2.3M iterations)
+Benchmarking lane_add/sequential/2048: Analyzing
+lane_add/sequential/2048
+                        time:   [2.1286 µs 2.1752 µs 2.2400 µs]
+                        change: [+0.3927% +2.2586% +4.5250%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Found 7 outliers among 100 measurements (7.00%)
+  2 (2.00%) high mild
+  5 (5.00%) high severe
+Benchmarking lane_add/sequential/4096
+Benchmarking lane_add/sequential/4096: Warming up for 3.0000 s
+Benchmarking lane_add/sequential/4096: Collecting 100 samples in estimated 5.0016 s (1.2M iterations)
+Benchmarking lane_add/sequential/4096: Analyzing
+lane_add/sequential/4096
+                        time:   [4.3852 µs 4.4176 µs 4.4547 µs]
+                        change: [+0.5289% +3.1576% +5.9388%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Found 15 outliers among 100 measurements (15.00%)
+  7 (7.00%) high mild
+  8 (8.00%) high severe
+Benchmarking lane_add/sequential/8192
+Benchmarking lane_add/sequential/8192: Warming up for 3.0000 s
+Benchmarking lane_add/sequential/8192: Collecting 100 samples in estimated 5.0076 s (535k iterations)
+Benchmarking lane_add/sequential/8192: Analyzing
+lane_add/sequential/8192
+                        time:   [8.6261 µs 8.6750 µs 8.7410 µs]
+                        change: [+1.4522% +3.2337% +4.8120%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 4 outliers among 100 measurements (4.00%)
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+
+Benchmarking stream_add/sequential/2048
+Benchmarking stream_add/sequential/2048: Warming up for 3.0000 s
+Benchmarking stream_add/sequential/2048: Collecting 100 samples in estimated 5.0783 s (278k iterations)
+Benchmarking stream_add/sequential/2048: Analyzing
+stream_add/sequential/2048
+                        time:   [17.967 µs 18.033 µs 18.105 µs]
+                        change: [+2.3263% +3.4905% +5.0307%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 6 outliers among 100 measurements (6.00%)
+  2 (2.00%) low mild
+  4 (4.00%) high severe
+Benchmarking stream_add/rayon_8lane/2048
+Benchmarking stream_add/rayon_8lane/2048: Warming up for 3.0000 s
+Benchmarking stream_add/rayon_8lane/2048: Collecting 100 samples in estimated 5.0351 s (232k iterations)
+Benchmarking stream_add/rayon_8lane/2048: Analyzing
+stream_add/rayon_8lane/2048
+                        time:   [21.183 µs 21.820 µs 22.663 µs]
+                        change: [+7.8062% +11.825% +16.006%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 8 outliers among 100 measurements (8.00%)
+  6 (6.00%) high mild
+  2 (2.00%) high severe
+Benchmarking stream_add/sequential/4096
+Benchmarking stream_add/sequential/4096: Warming up for 3.0000 s
+Benchmarking stream_add/sequential/4096: Collecting 100 samples in estimated 5.1533 s (141k iterations)
+Benchmarking stream_add/sequential/4096: Analyzing
+stream_add/sequential/4096
+                        time:   [33.587 µs 33.765 µs 34.007 µs]
+                        change: [+4.9017% +5.9730% +7.1941%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+Benchmarking stream_add/rayon_8lane/4096
+Benchmarking stream_add/rayon_8lane/4096: Warming up for 3.0000 s
+Benchmarking stream_add/rayon_8lane/4096: Collecting 100 samples in estimated 5.0840 s (146k iterations)
+Benchmarking stream_add/rayon_8lane/4096: Analyzing
+stream_add/rayon_8lane/4096
+                        time:   [35.088 µs 36.382 µs 37.934 µs]
+                        change: [+41.943% +47.813% +53.934%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 4 outliers among 100 measurements (4.00%)
+  4 (4.00%) high mild
+Benchmarking stream_add/sequential/8192
+Benchmarking stream_add/sequential/8192: Warming up for 3.0000 s
+Benchmarking stream_add/sequential/8192: Collecting 100 samples in estimated 5.3477 s (71k iterations)
+Benchmarking stream_add/sequential/8192: Analyzing
+stream_add/sequential/8192
+                        time:   [72.599 µs 73.187 µs 73.820 µs]
+                        change: [+8.0663% +10.900% +13.757%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+Benchmarking stream_add/rayon_8lane/8192
+Benchmarking stream_add/rayon_8lane/8192: Warming up for 3.0000 s
+Benchmarking stream_add/rayon_8lane/8192: Collecting 100 samples in estimated 5.0837 s (96k iterations)
+Benchmarking stream_add/rayon_8lane/8192: Analyzing
+stream_add/rayon_8lane/8192
+                        time:   [50.729 µs 52.476 µs 54.437 µs]
+                        change: [+30.652% +41.548% +52.504%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 3 outliers among 100 measurements (3.00%)
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+
+Benchmarking lane_mul/sequential/2048
+Benchmarking lane_mul/sequential/2048: Warming up for 3.0000 s
+Benchmarking lane_mul/sequential/2048: Collecting 100 samples in estimated 5.1156 s (197k iterations)
+Benchmarking lane_mul/sequential/2048: Analyzing
+lane_mul/sequential/2048
+                        time:   [25.263 µs 25.461 µs 25.684 µs]
+                        change: [-0.7746% +0.2684% +1.4721%] (p = 0.65 > 0.05)
+                        No change in performance detected.
+Found 15 outliers among 100 measurements (15.00%)
+  3 (3.00%) low mild
+  6 (6.00%) high mild
+  6 (6.00%) high severe
+Benchmarking lane_mul/sequential/4096
+Benchmarking lane_mul/sequential/4096: Warming up for 3.0000 s
+Benchmarking lane_mul/sequential/4096: Collecting 100 samples in estimated 5.1603 s (101k iterations)
+Benchmarking lane_mul/sequential/4096: Analyzing
+lane_mul/sequential/4096
+                        time:   [49.206 µs 49.566 µs 49.980 µs]
+                        change: [+2.2132% +3.1451% +4.0207%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 2 outliers among 100 measurements (2.00%)
+  2 (2.00%) high mild
+Benchmarking lane_mul/sequential/8192
+Benchmarking lane_mul/sequential/8192: Warming up for 3.0000 s
+Benchmarking lane_mul/sequential/8192: Collecting 100 samples in estimated 5.1112 s (50k iterations)
+Benchmarking lane_mul/sequential/8192: Analyzing
+lane_mul/sequential/8192
+                        time:   [98.188 µs 98.432 µs 98.688 µs]
+                        change: [+0.8707% +1.3675% +1.8756%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 3 outliers among 100 measurements (3.00%)
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+
+     Running unittests src/lib.rs (target/release/deps/nine65-e907907e5f2221b3)
+
+running 352 tests
+test accelerated::tests::test_accelerated_add ... ignored
+test accelerated::tests::test_rns_stream_roundtrip ... ignored
+test ahop::grover::tests::test_grover_2qubit ... ignored
+test ahop::grover::tests::test_grover_3qubit ... ignored
+test ahop::grover::tests::test_grover_4qubit ... ignored
+test ahop::grover::tests::test_grover_6qubit_scale ... ignored
+test ahop::grover::tests::test_grover_extreme_10000 ... ignored
+test ahop::grover::tests::test_grover_no_decoherence_1000 ... ignored
+test ahop::tests::test_fp2_add ... ignored
+test ahop::tests::test_fp2_conj ... ignored
+test ahop::tests::test_fp2_inverse ... ignored
+test ahop::tests::test_fp2_mul ... ignored
+test ahop::tests::test_fp2_norm_squared ... ignored
+test ahop::tests::test_probability ... ignored
+test ahop::tests::test_state_inner_product ... ignored
+test ahop::tests::test_state_uniform ... ignored
+test arithmetic::barrett::tests::test_barrett_benchmark ... ignored
+test arithmetic::barrett::tests::test_barrett_mul ... ignored
+test arithmetic::barrett::tests::test_barrett_pow ... ignored
+test arithmetic::barrett::tests::test_barrett_reduce ... ignored
+test arithmetic::barrett::tests::test_barrett_reduce_large ... ignored
+test arithmetic::barrett::tests::test_barrett_vs_naive ... ignored
+test arithmetic::barrett::tests::test_hybrid_context ... ignored
+test arithmetic::ct_mul_exact::tests::test_exact_ct_mul_simple ... ignored
+test arithmetic::ct_mul_exact::tests::test_exact_poly_mul_constant ... ignored
+test arithmetic::ct_mul_exact::tests::test_exact_rescale ... ignored
+test arithmetic::cyclotomic_phase::tests::test_modular_distance ... ignored
+test arithmetic::cyclotomic_phase::tests::test_sine_cosine_extraction ... ignored
+test arithmetic::exact_coeff::tests::test_add ... ignored
+test arithmetic::exact_coeff::tests::test_delta_squared_scaling ... ignored
+test arithmetic::exact_coeff::tests::test_encode_reconstruct ... ignored
+test arithmetic::exact_coeff::tests::test_exact_div ... ignored
+test arithmetic::exact_coeff::tests::test_mul ... ignored
+test arithmetic::exact_divider::tests::test_exact_divide ... ignored
+test arithmetic::exact_divider::tests::test_fhe_params ... ignored
+test arithmetic::exact_divider::tests::test_reconstruct_basic ... ignored
+test arithmetic::exact_divider::tests::test_roundtrip ... ignored
+test arithmetic::exact_divider::tests::test_scale_and_round ... ignored
+test arithmetic::integer_softmax::tests::test_softmax_equal_logits ... ignored
+test arithmetic::integer_softmax::tests::test_softmax_ordering ... ignored
+test arithmetic::integer_softmax::tests::test_softmax_single ... ignored
+test arithmetic::integer_softmax::tests::test_softmax_sum_exact ... ignored
+test arithmetic::k_elimination::tests::test_exact_division ... ignored
+test arithmetic::k_elimination::tests::test_fhe_rescaling ... ignored
+test arithmetic::k_elimination::tests::test_k_elimination_basic ... ignored
+test arithmetic::k_elimination::tests::test_large_values ... ignored
+test arithmetic::k_elimination::tests::test_scale_and_round ... ignored
+test arithmetic::mobius_int::tests::test_addition ... ignored
+test arithmetic::mobius_int::tests::test_chained_operations ... ignored
+test arithmetic::mobius_int::tests::test_comparison ... ignored
+test arithmetic::mobius_int::tests::test_from_i64 ... ignored
+test arithmetic::mobius_int::tests::test_many_chained_operations ... ignored
+test arithmetic::mobius_int::tests::test_multiplication ... ignored
+test arithmetic::mobius_int::tests::test_polynomial_arithmetic ... ignored
+test arithmetic::mobius_int::tests::test_polynomial_eval ... ignored
+test arithmetic::mobius_int::tests::test_polynomial_multiplication ... ignored
+test arithmetic::mobius_int::tests::test_subtraction ... ignored
+test arithmetic::mobius_int::tests::test_vector_operations ... ignored
+test arithmetic::montgomery::tests::test_montgomery_add_sub ... ignored
+test arithmetic::montgomery::tests::test_montgomery_benchmark ... ignored
+test arithmetic::montgomery::tests::test_montgomery_mul ... ignored
+test arithmetic::montgomery::tests::test_montgomery_pow ... ignored
+test arithmetic::montgomery::tests::test_montgomery_roundtrip ... ignored
+test arithmetic::mq_relu::tests::test_polynomial_relu ... ignored
+test arithmetic::mq_relu::tests::test_relu_application ... ignored
+test arithmetic::mq_relu::tests::test_sign_detection ... ignored
+test arithmetic::mq_relu::tests::test_signed_conversion ... ignored
+test arithmetic::ntt::tests::test_ntt_benchmark_1024 ... ignored
+test arithmetic::ntt::tests::test_ntt_multiply_correctness_small ... ignored
+test arithmetic::ntt::tests::test_ntt_multiply_random ... ignored
+test arithmetic::ntt::tests::test_ntt_negacyclic ... ignored
+test arithmetic::ntt::tests::test_ntt_roundtrip ... ignored
+test arithmetic::ntt::tests::test_polynomial_add ... ignored
+test arithmetic::ntt::tests::test_polynomial_sub ... ignored
+test arithmetic::ntt_fft::tests::test_benchmark_1024 ... ignored
+test arithmetic::ntt_fft::tests::test_benchmark_4096 ... ignored
+test arithmetic::ntt_fft::tests::test_multiply_small ... ignored
+test arithmetic::ntt_fft::tests::test_negacyclic ... ignored
+test arithmetic::ntt_fft::tests::test_ntt_intt_roundtrip ... ignored
+test arithmetic::ntt_fft::tests::test_vs_schoolbook ... ignored
+test arithmetic::pade_engine::tests::test_cos_at_zero ... ignored
+test arithmetic::pade_engine::tests::test_exp_at_zero ... ignored
+test arithmetic::pade_engine::tests::test_sigmoid_at_zero ... ignored
+test arithmetic::pade_engine::tests::test_sin_at_zero ... ignored
+test arithmetic::pade_engine::tests::test_tanh_symmetry ... ignored
+test arithmetic::persistent_montgomery::tests::test_benchmark_montgomery ... ignored
+test arithmetic::persistent_montgomery::tests::test_inverse ... ignored
+test arithmetic::persistent_montgomery::tests::test_montgomery_mul ... ignored
+test arithmetic::persistent_montgomery::tests::test_montgomery_roundtrip ... ignored
+test arithmetic::persistent_montgomery::tests::test_one_value ... ignored
+test arithmetic::persistent_montgomery::tests::test_persistent_chain ... ignored
+test arithmetic::persistent_montgomery::tests::test_polynomial_ops ... ignored
+test arithmetic::persistent_montgomery::tests::test_pow ... ignored
+test arithmetic::persistent_montgomery::tests::test_zero_conversion_overhead ... ignored
+test arithmetic::rns::tests::test_dual_rns_exact_division ... ignored
+test arithmetic::rns::tests::test_dual_rns_fhe_capacity ... ignored
+test arithmetic::rns::tests::test_dual_rns_fhe_full_chain ... ignored
+test arithmetic::rns::tests::test_dual_rns_k_elimination_basic ... ignored
+test arithmetic::rns::tests::test_dual_rns_polynomial_operations ... ignored
+test arithmetic::rns::tests::test_k_elim_rescale ... ignored
+test arithmetic::rns::tests::test_rns_add ... ignored
+test arithmetic::rns::tests::test_rns_mul ... ignored
+test arithmetic::rns::tests::test_rns_polynomial_add ... ignored
+test arithmetic::rns::tests::test_rns_polynomial_mul ... ignored
+test arithmetic::rns::tests::test_rns_roundtrip ... ignored
+test arithmetic::valuation::tests::test_add_conservative ... ignored
+test arithmetic::valuation::tests::test_can_divide ... ignored
+test arithmetic::valuation::tests::test_checked_div ... ignored
+test arithmetic::valuation::tests::test_checked_div_uncertain ... ignored
+test arithmetic::valuation::tests::test_div_exact_panics - should panic ... ignored
+test arithmetic::valuation::tests::test_fhe_rescale_flow ... ignored
+test arithmetic::valuation::tests::test_from_integer ... ignored
+test arithmetic::valuation::tests::test_from_moduli_product ... ignored
+test arithmetic::valuation::tests::test_mul ... ignored
+test arithmetic::valuation::tests::test_one ... ignored
+test arithmetic::valuation::tests::test_overflow_protection ... ignored
+test arithmetic::valuation::tests::test_suggest_rescale_deterministic ... ignored
+test arithmetic::valuation::tests::test_unfactored_uncertainty ... ignored
+test arithmetic::valuation::tests::test_zero ... ignored
+test entropy::crt_shadow::tests::test_benchmark_signature_overhead ... ignored
+test entropy::crt_shadow::tests::test_benchmark_throughput ... ignored
+test entropy::crt_shadow::tests::test_compare_magnitudes_via_signature ... ignored
+test entropy::crt_shadow::tests::test_crt_basic ... ignored
+test entropy::crt_shadow::tests::test_entropy_quality ... ignored
+test entropy::crt_shadow::tests::test_entropy_throughput ... ignored
+test entropy::crt_shadow::tests::test_integrated_rns ... ignored
+test entropy::crt_shadow::tests::test_large_numbers ... ignored
+test entropy::crt_shadow::tests::test_mul_with_shadows ... ignored
+test entropy::crt_shadow::tests::test_mul_with_signature ... ignored
+test entropy::crt_shadow::tests::test_quotient_signature_add ... ignored
+test entropy::crt_shadow::tests::test_quotient_signature_basic ... ignored
+test entropy::crt_shadow::tests::test_quotient_signature_comparison ... ignored
+test entropy::crt_shadow::tests::test_quotient_signature_magnitude_class ... ignored
+test entropy::crt_shadow::tests::test_quotient_signature_mul ... ignored
+test entropy::crt_shadow::tests::test_shadow_accumulator ... ignored
+test entropy::crt_shadow::tests::test_shadow_determinism ... ignored
+test entropy::crt_shadow::tests::test_shadow_variation ... ignored
+test entropy::crt_shadow::tests::test_signature_is_small_large ... ignored
+test entropy::crt_shadow::tests::test_signature_ordering_consistency ... ignored
+test entropy::secure::tests::test_secure_bytes ... ignored
+test entropy::secure::tests::test_secure_cbd ... ignored
+test entropy::secure::tests::test_secure_ternary_distribution ... ignored
+test entropy::secure::tests::test_secure_u64_bounded ... ignored
+test entropy::secure::tests::test_secure_vectors ... ignored
+test entropy::shadow::tests::test_bounded_uniform ... ignored
+test entropy::shadow::tests::test_cbd_mean ... ignored
+test entropy::shadow::tests::test_cbd_range ... ignored
+test entropy::shadow::tests::test_deterministic ... ignored
+test entropy::shadow::tests::test_different_seeds ... ignored
+test entropy::shadow::tests::test_no_obvious_patterns ... ignored
+test entropy::shadow::tests::test_signed_to_unsigned ... ignored
+test entropy::shadow::tests::test_ternary_distribution ... ignored
+test entropy::wassan_noise::tests::test_benchmark_vs_shadow ... ignored
+test entropy::wassan_noise::tests::test_cbd_noise ... ignored
+test entropy::wassan_noise::tests::test_creation ... ignored
+test entropy::wassan_noise::tests::test_fhe_noise_polynomial_benchmark ... ignored
+test entropy::wassan_noise::tests::test_polynomial_generation ... ignored
+test entropy::wassan_noise::tests::test_sample_deterministic ... ignored
+test entropy::wassan_noise::tests::test_ternary_distribution ... ignored
+test integration_tests::test_benchmarks ... ignored
+test integration_tests::test_full_fhe_workflow ... ignored
+test integration_tests::test_grover_integration ... ignored
+test integration_tests::test_production_128bit ... ignored
+test kat::tests::test_all_kats ... ignored
+test kat::tests::test_kat_deterministic ... ignored
+test kat::tests::test_kat_encrypt_decrypt ... ignored
+test kat::tests::test_kat_homomorphic_ops ... ignored
+test keys::tests::test_encrypt_decrypt_with_secure_keys ... ignored
+test keys::tests::test_keygen_basic ... ignored
+test keys::tests::test_keygen_benchmark ... ignored
+test keys::tests::test_keygen_deterministic ... ignored
+test keys::tests::test_keygen_secure ... ignored
+test keys::tests::test_keygen_secure_benchmark ... ignored
+test keys::tests::test_secure_key_is_ternary ... ignored
+test noise::budget::tests::test_he_standard_budget ... ignored
+test noise::budget::tests::test_noise_budget_consumption ... ignored
+test noise::budget::tests::test_noise_budget_creation ... ignored
+test noise::budget::tests::test_noise_budget_exhaustion ... ignored
+test noise::budget::tests::test_noise_budget_tracking ... ignored
+test noise::budget::tests::test_remaining_multiplications ... ignored
+test noise::tests::test_budget_utilization ... ignored
+test noise::tests::test_ema_calculation ... ignored
+test noise::tests::test_integer_sqrt ... ignored
+test noise::tests::test_multi_window_detector ... ignored
+test noise::tests::test_noise_budget_exhaustion ... ignored
+test noise::tests::test_noise_budget_tracker ... ignored
+test noise::tests::test_noise_distribution ... ignored
+test noise::tests::test_noise_window ... ignored
+test noise::tests::test_p2_large_stream ... ignored
+test noise::tests::test_p2_o1_memory ... ignored
+test noise::tests::test_p2_quantile_median ... ignored
+test noise::tests::test_p2_quantile_p95 ... ignored
+test noise::tests::test_remaining_muls_estimate ... ignored
+test ops::encrypt::tests::test_encode_decode ... ignored
+test ops::encrypt::tests::test_encrypt_benchmark ... ignored
+test ops::encrypt::tests::test_encrypt_decrypt_random ... ignored
+test ops::encrypt::tests::test_encrypt_decrypt_roundtrip ... ignored
+test ops::encrypt::tests::test_encrypt_deterministic ... ignored
+test ops::gso_fhe::arithmetic_benchmarks::benchmark_full_arithmetic ... ignored
+test ops::gso_fhe::depth_benchmarks::benchmark_entropy_during_fhe ... ignored
+test ops::gso_fhe::depth_benchmarks::benchmark_full_system_integration ... ignored
+test ops::gso_fhe::depth_benchmarks::benchmark_symmetric_max_depth ... ignored
+test ops::gso_fhe::tests::test_basin_geometry ... ignored
+test ops::gso_fhe::tests::test_collapse_time ... ignored
+test ops::gso_fhe::tests::test_gso_add ... ignored
+test ops::gso_fhe::tests::test_gso_deep_symmetric ... ignored
+test ops::gso_fhe::tests::test_gso_encrypt_decrypt ... ignored
+test ops::gso_fhe::tests::test_gso_mul_public_depth1 ... ignored
+test ops::gso_fhe::tests::test_gso_mul_public_depth2 ... ignored
+test ops::gso_fhe::tests::test_gso_mul_symmetric ... ignored
+test ops::gso_fhe::tests::test_gso_mul_symmetric_depth2 ... ignored
+test ops::homomorphic::tests::test_add_plain ... ignored
+test ops::homomorphic::tests::test_ct_mul_multiple_values ... ignored
+test ops::homomorphic::tests::test_encrypt_decrypt_light_mul ... ignored
+test ops::homomorphic::tests::test_homo_add_benchmark ... ignored
+test ops::homomorphic::tests::test_homo_mul_benchmark ... ignored
+test ops::homomorphic::tests::test_homomorphic_add ... ignored
+test ops::homomorphic::tests::test_homomorphic_mul_diagnostic ... ignored
+test ops::homomorphic::tests::test_homomorphic_mul_no_relin ... ignored
+test ops::homomorphic::tests::test_homomorphic_mul_with_relin ... ignored
+test ops::homomorphic::tests::test_mul_degree2_decrypt ... ignored
+test ops::homomorphic::tests::test_mul_plain ... ignored
+test ops::homomorphic::tests::test_negate ... ignored
+test ops::homomorphic::tests::test_ntt_basic_multiply ... ignored
+test ops::homomorphic::tests::test_relinearization_trace ... ignored
+test ops::homomorphic::tests::test_scaling_comparison ... ignored
+test ops::homomorphic::tests::test_subtraction ... ignored
+test ops::homomorphic::tests::test_tensor_product_trace ... ignored
+test ops::neural::tests::test_dense_layer_identity ... ignored
+test ops::neural::tests::test_relu_negative ... ignored
+test ops::neural::tests::test_relu_positive ... ignored
+test ops::neural::tests::test_sigmoid_at_zero ... ignored
+test ops::neural::tests::test_signed_conversion_roundtrip ... ignored
+test ops::neural::tests::test_softmax_exact_sum ... ignored
+test ops::rns_fhe::tests::bench_intt_rescale_cost ... ignored, Timing test - run manually with --nocapture
+test ops::rns_fhe::tests::test_anchor_ntt_multiplication_correctness ... ignored
+test ops::rns_fhe::tests::test_anchor_ntt_roundtrip ... ignored
+test ops::rns_fhe::tests::test_auto_routing ... ignored
+test ops::rns_fhe::tests::test_auto_routing_chained_operations ... ignored
+test ops::rns_fhe::tests::test_centered_representative_invariant ... ignored
+test ops::rns_fhe::tests::test_chain_via_auto ... ignored
+test ops::rns_fhe::tests::test_ciphertext_consistency ... ignored, Uses anchor.to_int() which overflows u128. Use assert_main_anchor_consistent() instead.
+test ops::rns_fhe::tests::test_coeff_domain_capacity_analysis ... ignored
+test ops::rns_fhe::tests::test_coeff_domain_full_ct_mul ... ignored
+test ops::rns_fhe::tests::test_coeff_domain_trivial_ct_mul ... ignored
+test ops::rns_fhe::tests::test_compare_symmetric_vs_public ... ignored
+test ops::rns_fhe::tests::test_dual_poly_mul_consistency ... ignored, Uses anchor.to_int() which overflows u128. Use assert_main_anchor_consistent() instead.
+test ops::rns_fhe::tests::test_dual_rns_ct_mul_capacity_analysis ... ignored
+test ops::rns_fhe::tests::test_dual_rns_encrypt_decrypt ... ignored
+test ops::rns_fhe::tests::test_dual_rns_trivial_ct_mul ... ignored
+test ops::rns_fhe::tests::test_e2_s2_k_source ... ignored
+test ops::rns_fhe::tests::test_k_elim_rescale_direct ... ignored
+test ops::rns_fhe::tests::test_mul_dual_anchor_consistency_trace ... ignored, Uses anchor.to_int() which overflows u128. Use assert_main_anchor_consistent() instead.
+test ops::rns_fhe::tests::test_mul_dual_debug ... ignored, Uses anchor.to_int() which overflows u128. Use assert_main_anchor_consistent() instead.
+test ops::rns_fhe::tests::test_mul_dual_public_mode ... ignored
+test ops::rns_fhe::tests::test_mul_dual_public_mode_deep ... ignored
+test ops::rns_fhe::tests::test_mul_dual_trace_smoke ... ignored
+test ops::rns_fhe::tests::test_ntt_domain_capacity_analysis ... ignored
+test ops::rns_fhe::tests::test_ntt_domain_full_ct_mul ... ignored
+test ops::rns_fhe::tests::test_ntt_domain_trivial_ct_mul ... ignored
+test ops::rns_fhe::tests::test_ntt_main_anchor_consistency ... ignored
+test ops::rns_fhe::tests::test_ntt_mul_residues ... ignored, Uses anchor.to_int() which overflows u128. Use assert_main_anchor_consistent() instead.
+test ops::rns_fhe::tests::test_ntt_multiply_consistency ... ignored
+test ops::rns_fhe::tests::test_ntt_roundtrip_consistency ... ignored
+test ops::rns_fhe::tests::test_ntt_ternary_mul ... ignored
+test ops::rns_fhe::tests::test_public_mode_depth2_phase_trace ... ignored
+test ops::rns_fhe::tests::test_random_expressions_depth3 ... ignored
+test ops::rns_fhe::tests::test_random_expressions_kelim_dual ... ignored
+test ops::rns_fhe::tests::test_regime_mismatch_add_mixed_ciphertexts - should panic ... ignored
+test ops::rns_fhe::tests::test_regime_mismatch_encrypt_single_keys_dual_route - should panic ... ignored
+test ops::rns_fhe::tests::test_regime_mismatch_mul_mixed_ciphertexts - should panic ... ignored
+test ops::rns_fhe::tests::test_result_times_different_fresh ... ignored
+test ops::rns_fhe::tests::test_result_times_fresh ... ignored
+test ops::rns_fhe::tests::test_rns_exact_encrypt_decrypt ... ignored
+test ops::rns_fhe::tests::test_rns_exact_multiplication ... ignored
+test ops::rns_fhe::tests::test_rns_exact_multiplication_chain ... ignored
+test ops::rns_fhe::tests::test_rns_multiplication_chain ... ignored
+test ops::rns_fhe::tests::test_rns_native_addition ... ignored
+test ops::rns_fhe::tests::test_rns_native_encrypt_decrypt ... ignored
+test ops::rns_fhe::tests::test_rns_native_multiplication ... ignored
+test ops::rns_fhe::tests::test_rns_simple_add_mul ... ignored
+test ops::rns_fhe::tests::test_tree_mul_deep_passes ... ignored, Requires deep_128 config which may be slow to initialize
+test ops::rns_fhe::tests::test_tree_mul_light_diagnostic ... ignored
+test ops::rns_fhe::tests::test_tree_mul_phase_error_trace ... ignored
+test ops::rns_mul::tests::test_rns_mul_basic ... ignored
+test ops::rns_mul::tests::test_rns_mul_multiple_values ... ignored
+test ops::rns_mul::tests::test_rns_mul_with_relin ... ignored
+test params::primes::tests::test_find_primitive_root ... ignored
+test params::primes::tests::test_gcd ... ignored
+test params::primes::tests::test_mod_inverse ... ignored
+test params::primes::tests::test_mod_pow ... ignored
+test params::primes::tests::test_primes_are_prime ... ignored
+test params::primes::tests::test_primes_ntt_compatible_4096 ... ignored
+test params::primes::tests::test_primes_ntt_compatible_8192 ... ignored
+test params::primes::tests::test_primes_pairwise_coprime ... ignored
+test params::primes::tests::test_product_security_128bit ... ignored
+test params::production::tests::test_modulus_chain ... ignored
+test params::production::tests::test_primes_are_coprime ... ignored
+test params::production::tests::test_primes_are_ntt_compatible ... ignored
+test params::production::tests::test_production_config_128 ... ignored
+test params::production::tests::test_production_config_deep ... ignored
+test params::tests::test_all_configs_valid ... ignored
+test params::tests::test_custom_config ... ignored
+test params::tests::test_estimated_depth ... ignored
+test params::tests::test_he_standard_compliance ... ignored
+test params::validation::tests::test_assert_invalid_panics - should panic ... ignored
+test params::validation::tests::test_he_standard_compliance ... ignored
+test params::validation::tests::test_large_n_valid ... ignored
+test params::validation::tests::test_large_q_fails ... ignored
+test params::validation::tests::test_max_safe_n ... ignored
+test params::validation::tests::test_standard_params_valid ... ignored
+test quantum::amplitude::tests::test_amplitude_creation ... ignored
+test quantum::amplitude::tests::test_flip_sign ... ignored
+test quantum::amplitude::tests::test_grover_diffusion ... ignored
+test quantum::amplitude::tests::test_grover_search_small ... ignored
+test quantum::amplitude::tests::test_oracle_creates_negative ... ignored
+test quantum::entanglement::tests::test_bell_inequality ... ignored
+test quantum::entanglement::tests::test_correlation ... ignored
+test quantum::entanglement::tests::test_entangled_pair ... ignored
+test quantum::entanglement::tests::test_ghz_state ... ignored
+test quantum::entanglement::tests::test_many_pairs ... ignored
+test quantum::teleport::tests::benchmark_teleportation ... ignored
+test quantum::teleport::tests::test_basic_teleportation ... ignored
+test quantum::teleport::tests::test_blind_receive ... ignored
+test quantum::teleport::tests::test_entanglement_properties ... ignored
+test quantum::teleport::tests::test_large_teleportation ... ignored
+test quantum::teleport::tests::test_teleportation_demo ... ignored
+test quantum::tests::test_full_quantum_stack ... ignored
+test quantum::tests::test_quantum_demo_runs ... ignored
+test ring::polynomial::tests::test_exact_scalar_div ... ignored
+test ring::polynomial::tests::test_infinity_norm ... ignored
+test ring::polynomial::tests::test_negation ... ignored
+test ring::polynomial::tests::test_ring_add_commutative ... ignored
+test ring::polynomial::tests::test_ring_mul_associative ... ignored
+test ring::polynomial::tests::test_ring_negacyclic ... ignored
+test ring::polynomial::tests::test_scalar_mul ... ignored
+test ring::polynomial::tests::test_signed_coeffs ... ignored
+test ring::polynomial::tests::test_ternary_polynomial ... ignored
+test security::tests::test_all_configs_security ... ignored
+test security::tests::test_he_standard_estimate ... ignored
+test security::tests::test_lwe_params_from_config ... ignored
+test security::tests::test_max_log_q ... ignored
+test security::tests::test_security_levels ... ignored
+test v2_integration_tests::v2_integration_tests::test_fft_1024_benchmark ... ignored
+test v2_integration_tests::v2_integration_tests::test_fft_matches_dft ... ignored
+test v2_integration_tests::v2_integration_tests::test_fft_negacyclic ... ignored
+test v2_integration_tests::v2_integration_tests::test_fft_ntt_roundtrip ... ignored
+test v2_integration_tests::v2_integration_tests::test_v2_speedup_summary ... ignored
+test v2_integration_tests::v2_integration_tests::test_wassan_benchmark ... ignored
+test v2_integration_tests::v2_integration_tests::test_wassan_deterministic ... ignored
+test v2_integration_tests::v2_integration_tests::test_wassan_polynomial ... ignored
+test v2_integration_tests::v2_integration_tests::test_wassan_ternary_distribution ... ignored
+
+test result: ok. 0 passed; 0 failed; 352 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running benches/fhe_scaling.rs (target/release/deps/fhe_scaling-837acbbcd51f0cc7)
+Benchmarking homo_mul_scaling/parallel/N=1024
+Benchmarking homo_mul_scaling/parallel/N=1024: Warming up for 3.0000 s
+Benchmarking homo_mul_scaling/parallel/N=1024: Collecting 10 samples in estimated 5.0113 s (2695 iterations)
+Benchmarking homo_mul_scaling/parallel/N=1024: Analyzing
+homo_mul_scaling/parallel/N=1024
+                        time:   [1.8489 ms 1.8898 ms 1.9373 ms]
+                        change: [-0.2944% +2.1019% +4.8556%] (p = 0.16 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) high mild
+  1 (10.00%) high severe
+Benchmarking homo_mul_scaling/parallel/N=2048
+Benchmarking homo_mul_scaling/parallel/N=2048: Warming up for 3.0000 s
+Benchmarking homo_mul_scaling/parallel/N=2048: Collecting 10 samples in estimated 5.1475 s (1265 iterations)
+Benchmarking homo_mul_scaling/parallel/N=2048: Analyzing
+homo_mul_scaling/parallel/N=2048
+                        time:   [4.1041 ms 4.1715 ms 4.2608 ms]
+                        change: [-4.9286% +0.1497% +6.0085%] (p = 0.96 > 0.05)
+                        No change in performance detected.
+Benchmarking homo_mul_scaling/parallel/N=4096
+Benchmarking homo_mul_scaling/parallel/N=4096: Warming up for 3.0000 s
+Benchmarking homo_mul_scaling/parallel/N=4096: Collecting 10 samples in estimated 5.1833 s (550 iterations)
+Benchmarking homo_mul_scaling/parallel/N=4096: Analyzing
+homo_mul_scaling/parallel/N=4096
+                        time:   [8.8073 ms 9.5205 ms 10.084 ms]
+                        change: [-5.7238% +1.3187% +8.4561%] (p = 0.73 > 0.05)
+                        No change in performance detected.
+Benchmarking homo_mul_scaling/parallel/N=8192
+Benchmarking homo_mul_scaling/parallel/N=8192: Warming up for 3.0000 s
+Benchmarking homo_mul_scaling/parallel/N=8192: Collecting 10 samples in estimated 5.2916 s (275 iterations)
+Benchmarking homo_mul_scaling/parallel/N=8192: Analyzing
+homo_mul_scaling/parallel/N=8192
+                        time:   [19.027 ms 19.357 ms 19.879 ms]
+                        change: [-2.6827% +2.1263% +6.9100%] (p = 0.41 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) low mild
+
+Benchmarking ntt_scaling/forward/1024
+Benchmarking ntt_scaling/forward/1024: Warming up for 3.0000 s
+Benchmarking ntt_scaling/forward/1024: Collecting 20 samples in estimated 5.0028 s (209k iterations)
+Benchmarking ntt_scaling/forward/1024: Analyzing
+ntt_scaling/forward/1024
+                        time:   [23.652 µs 23.780 µs 23.940 µs]
+                        change: [-3.4235% -2.0820% -0.7902%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking ntt_scaling/roundtrip/1024
+Benchmarking ntt_scaling/roundtrip/1024: Warming up for 3.0000 s
+Benchmarking ntt_scaling/roundtrip/1024: Collecting 20 samples in estimated 5.0100 s (58k iterations)
+Benchmarking ntt_scaling/roundtrip/1024: Analyzing
+ntt_scaling/roundtrip/1024
+                        time:   [85.950 µs 86.318 µs 86.865 µs]
+                        change: [-1.8068% -0.9250% -0.0007%] (p = 0.06 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 20 measurements (5.00%)
+  1 (5.00%) high mild
+Benchmarking ntt_scaling/forward/2048
+Benchmarking ntt_scaling/forward/2048: Warming up for 3.0000 s
+Benchmarking ntt_scaling/forward/2048: Collecting 20 samples in estimated 5.0074 s (92k iterations)
+Benchmarking ntt_scaling/forward/2048: Analyzing
+ntt_scaling/forward/2048
+                        time:   [53.095 µs 53.504 µs 53.981 µs]
+                        change: [-2.7118% -0.1081% +2.5525%] (p = 0.94 > 0.05)
+                        No change in performance detected.
+Found 3 outliers among 20 measurements (15.00%)
+  1 (5.00%) high mild
+  2 (10.00%) high severe
+Benchmarking ntt_scaling/roundtrip/2048
+Benchmarking ntt_scaling/roundtrip/2048: Warming up for 3.0000 s
+Benchmarking ntt_scaling/roundtrip/2048: Collecting 20 samples in estimated 5.0166 s (23k iterations)
+Benchmarking ntt_scaling/roundtrip/2048: Analyzing
+ntt_scaling/roundtrip/2048
+                        time:   [217.20 µs 218.09 µs 219.30 µs]
+                        change: [+0.0616% +1.2682% +2.5828%] (p = 0.07 > 0.05)
+                        No change in performance detected.
+Found 3 outliers among 20 measurements (15.00%)
+  3 (15.00%) high mild
+Benchmarking ntt_scaling/forward/4096
+Benchmarking ntt_scaling/forward/4096: Warming up for 3.0000 s
+Benchmarking ntt_scaling/forward/4096: Collecting 20 samples in estimated 5.0254 s (35k iterations)
+Benchmarking ntt_scaling/forward/4096: Analyzing
+ntt_scaling/forward/4096
+                        time:   [140.33 µs 140.98 µs 141.83 µs]
+                        change: [-1.2031% -0.2450% +0.7895%] (p = 0.65 > 0.05)
+                        No change in performance detected.
+Found 3 outliers among 20 measurements (15.00%)
+  3 (15.00%) high mild
+Benchmarking ntt_scaling/roundtrip/4096
+Benchmarking ntt_scaling/roundtrip/4096: Warming up for 3.0000 s
+Benchmarking ntt_scaling/roundtrip/4096: Collecting 20 samples in estimated 5.0367 s (10k iterations)
+Benchmarking ntt_scaling/roundtrip/4096: Analyzing
+ntt_scaling/roundtrip/4096
+                        time:   [499.53 µs 500.95 µs 502.54 µs]
+                        change: [-2.1471% -0.7149% +0.5122%] (p = 0.34 > 0.05)
+                        No change in performance detected.
+Benchmarking ntt_scaling/forward/8192
+Benchmarking ntt_scaling/forward/8192: Warming up for 3.0000 s
+Benchmarking ntt_scaling/forward/8192: Collecting 20 samples in estimated 5.0133 s (14k iterations)
+Benchmarking ntt_scaling/forward/8192: Analyzing
+ntt_scaling/forward/8192
+                        time:   [355.23 µs 357.27 µs 360.22 µs]
+                        change: [-1.2902% +0.2144% +1.7722%] (p = 0.79 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 20 measurements (5.00%)
+  1 (5.00%) high severe
+Benchmarking ntt_scaling/roundtrip/8192
+Benchmarking ntt_scaling/roundtrip/8192: Warming up for 3.0000 s
+Benchmarking ntt_scaling/roundtrip/8192: Collecting 20 samples in estimated 5.1278 s (4620 iterations)
+Benchmarking ntt_scaling/roundtrip/8192: Analyzing
+ntt_scaling/roundtrip/8192
+                        time:   [1.0942 ms 1.0973 ms 1.1006 ms]
+                        change: [-1.6596% -0.5672% +0.4872%] (p = 0.32 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 20 measurements (5.00%)
+  1 (5.00%) high mild
+
+Benchmarking encrypt_decrypt_scaling/encrypt/1024
+Benchmarking encrypt_decrypt_scaling/encrypt/1024: Warming up for 3.0000 s
+Benchmarking encrypt_decrypt_scaling/encrypt/1024: Collecting 20 samples in estimated 5.0911 s (8820 iterations)
+Benchmarking encrypt_decrypt_scaling/encrypt/1024: Analyzing
+encrypt_decrypt_scaling/encrypt/1024
+                        time:   [570.97 µs 574.14 µs 577.45 µs]
+                        change: [-1.1275% -0.1600% +0.7158%] (p = 0.75 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 20 measurements (5.00%)
+  1 (5.00%) high mild
+Benchmarking encrypt_decrypt_scaling/decrypt/1024
+Benchmarking encrypt_decrypt_scaling/decrypt/1024: Warming up for 3.0000 s
+Benchmarking encrypt_decrypt_scaling/decrypt/1024: Collecting 20 samples in estimated 5.0010 s (21k iterations)
+Benchmarking encrypt_decrypt_scaling/decrypt/1024: Analyzing
+encrypt_decrypt_scaling/decrypt/1024
+                        time:   [237.74 µs 239.03 µs 240.32 µs]
+                        change: [-0.9079% -0.0879% +0.8344%] (p = 0.85 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 20 measurements (10.00%)
+  2 (10.00%) high mild
+Benchmarking encrypt_decrypt_scaling/encrypt/2048
+Benchmarking encrypt_decrypt_scaling/encrypt/2048: Warming up for 3.0000 s
+Benchmarking encrypt_decrypt_scaling/encrypt/2048: Collecting 20 samples in estimated 5.0632 s (3990 iterations)
+Benchmarking encrypt_decrypt_scaling/encrypt/2048: Analyzing
+encrypt_decrypt_scaling/encrypt/2048
+                        time:   [1.2534 ms 1.2597 ms 1.2690 ms]
+                        change: [-2.2162% -0.8260% +0.5169%] (p = 0.26 > 0.05)
+                        No change in performance detected.
+Benchmarking encrypt_decrypt_scaling/decrypt/2048
+Benchmarking encrypt_decrypt_scaling/decrypt/2048: Warming up for 3.0000 s
+Benchmarking encrypt_decrypt_scaling/decrypt/2048: Collecting 20 samples in estimated 5.1097 s (9450 iterations)
+Benchmarking encrypt_decrypt_scaling/decrypt/2048: Analyzing
+encrypt_decrypt_scaling/decrypt/2048
+                        time:   [536.18 µs 539.19 µs 541.55 µs]
+                        change: [-1.4278% -0.5462% +0.2697%] (p = 0.23 > 0.05)
+                        No change in performance detected.
+Benchmarking encrypt_decrypt_scaling/encrypt/4096
+Benchmarking encrypt_decrypt_scaling/encrypt/4096: Warming up for 3.0000 s
+Benchmarking encrypt_decrypt_scaling/encrypt/4096: Collecting 20 samples in estimated 5.0982 s (1890 iterations)
+Benchmarking encrypt_decrypt_scaling/encrypt/4096: Analyzing
+encrypt_decrypt_scaling/encrypt/4096
+                        time:   [2.6744 ms 2.6837 ms 2.6938 ms]
+                        change: [-1.2781% -0.4963% +0.4518%] (p = 0.27 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 20 measurements (5.00%)
+  1 (5.00%) high mild
+Benchmarking encrypt_decrypt_scaling/decrypt/4096
+Benchmarking encrypt_decrypt_scaling/decrypt/4096: Warming up for 3.0000 s
+Benchmarking encrypt_decrypt_scaling/decrypt/4096: Collecting 20 samples in estimated 5.1699 s (4410 iterations)
+Benchmarking encrypt_decrypt_scaling/decrypt/4096: Analyzing
+encrypt_decrypt_scaling/decrypt/4096
+                        time:   [1.1609 ms 1.1650 ms 1.1704 ms]
+                        change: [-0.9758% +0.0909% +1.1318%] (p = 0.87 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 20 measurements (5.00%)
+  1 (5.00%) high mild
+Benchmarking encrypt_decrypt_scaling/encrypt/8192
+Benchmarking encrypt_decrypt_scaling/encrypt/8192: Warming up for 3.0000 s
+Benchmarking encrypt_decrypt_scaling/encrypt/8192: Collecting 20 samples in estimated 6.0319 s (1050 iterations)
+Benchmarking encrypt_decrypt_scaling/encrypt/8192: Analyzing
+encrypt_decrypt_scaling/encrypt/8192
+                        time:   [5.6880 ms 5.7178 ms 5.7515 ms]
+                        change: [-1.1356% -0.0709% +0.9604%] (p = 0.89 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 20 measurements (5.00%)
+  1 (5.00%) high mild
+Benchmarking encrypt_decrypt_scaling/decrypt/8192
+Benchmarking encrypt_decrypt_scaling/decrypt/8192: Warming up for 3.0000 s
+Benchmarking encrypt_decrypt_scaling/decrypt/8192: Collecting 20 samples in estimated 5.2977 s (2100 iterations)
+Benchmarking encrypt_decrypt_scaling/decrypt/8192: Analyzing
+encrypt_decrypt_scaling/decrypt/8192
+                        time:   [2.4948 ms 2.5040 ms 2.5155 ms]
+                        change: [-1.9791% -0.7740% +0.3388%] (p = 0.22 > 0.05)
+                        No change in performance detected.
+
+     Running unittests src/lib.rs (target/release/deps/unhal-a0f7431260bd9314)
+
+running 10 tests
+test accelerator::tests::test_accelerator_auto ... ignored
+test accelerator::tests::test_add_streams ... ignored
+test accelerator::tests::test_sum_streams ... ignored
+test batch::tests::test_batch_add ... ignored
+test batch::tests::test_broadcast_add ... ignored
+test batch::tests::test_reduce_add ... ignored
+test batch::tests::test_reduce_add_par ... ignored
+test pipeline::tests::test_pipeline_add ... ignored
+test pipeline::tests::test_pipeline_chain ... ignored
+test pipeline::tests::test_pipeline_negate ... ignored
+
+test result: ok. 0 passed; 0 failed; 10 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

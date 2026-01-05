@@ -1,13 +1,31 @@
 # Build artifacts
 /target/
-Cargo.lock
+*.tar.gz
+*.zip
+*.odt
+
+# Large binaries
+nine65_fhe_functional_static
+seal_light_bench_static
+seal_light_bench_dyn
+
+# Coq build
+*.vo
+*.vok
+*.vos
+*.glob
+*.aux
+.lia.cache
+.nia.cache
+
+# Lean build
+.lake/
+/lean4/KElimination/.lake/
 
 # IDE
 .idea/
 .vscode/
-*.swp
-*.swo
 
-# OS
-.DS_Store
-Thumbs.db
+# Text logs that may be large
+*_run.txt
+lean4/KElimination/
