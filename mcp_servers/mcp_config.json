@@ -1,0 +1,38 @@
+{
+  "mcpServers": {
+    "codex-delegation": {
+      "command": "python3",
+      "args": [
+        "/home/acid/Projects/NINE65/MANA_boosted/mcp_servers/codex_server.py"
+      ],
+      "env": {
+        "OPENAI_API_KEY": "${OPENAI_API_KEY}",
+        "OPENAI_CODEX_MODEL": "${OPENAI_CODEX_MODEL:-gpt-4}"
+      },
+      "description": "OpenAI Codex/GPT-4 for code generation and debugging"
+    },
+    "qwen-delegation": {
+      "command": "python3",
+      "args": [
+        "/home/acid/Projects/NINE65/MANA_boosted/mcp_servers/qwen_server.py"
+      ],
+      "env": {
+        "QWEN_API_KEY": "${QWEN_API_KEY}",
+        "TOGETHER_API_KEY": "${TOGETHER_API_KEY}",
+        "QWEN_MODEL": "${QWEN_MODEL:-Qwen/Qwen2.5-Coder-32B-Instruct}"
+      },
+      "description": "QWEN for mathematical reasoning and formal verification"
+    },
+    "gemini-delegation": {
+      "command": "python3",
+      "args": [
+        "/home/acid/Projects/NINE65/MANA_boosted/mcp_servers/gemini_server.py"
+      ],
+      "env": {
+        "GOOGLE_API_KEY": "${GOOGLE_API_KEY}",
+        "GEMINI_MODEL": "${GEMINI_MODEL:-gemini-2.0-flash-exp}"
+      },
+      "description": "Google Gemini for code analysis and documentation"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+# MCP Server Dependencies
+# Install with: pip install -r requirements.txt
+
+# Core dependencies
+anthropic>=0.18.0
+requests>=2.31.0
+
+# OpenAI Codex
+openai>=1.0.0
+
+# Google Gemini
+google-generativeai>=0.3.0
+
+# Optional: for local QWEN deployment
+# transformers>=4.36.0
+# torch>=2.1.0
