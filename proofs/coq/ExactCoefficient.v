@@ -50,8 +50,16 @@ Theorem add_preserves_invariant : forall a b : DualCoeff,
   a.(dc_modulus) > 0 ->
   dual_invariant (dual_add a b).
 Proof.
-  (* RNS add mod m = (exact_a + exact_b) mod m *)
-Admitted.
+  intros a b Ha Hb Hmod Hpos.
+  unfold dual_invariant in *. unfold dual_add. simpl.
+  (* Ha: a.(dc_rns) = a.(dc_exact) mod a.(dc_modulus) *)
+  (* Hb: b.(dc_rns) = b.(dc_exact) mod b.(dc_modulus) *)
+  (* Goal: (a.(dc_rns) + b.(dc_rns)) mod m = (a.(dc_exact) + b.(dc_exact)) mod m *)
+  rewrite Ha. rewrite Hb. rewrite Hmod.
+  (* Goal: (a.(dc_exact) mod m + b.(dc_exact) mod m) mod m = (a.(dc_exact) + b.(dc_exact)) mod m *)
+  symmetry.
+    apply Nat.Div0.add_mod.
+Qed.
 
 (** Multiplication preserves invariant *)
 Definition dual_mul (a b : DualCoeff) : DualCoeff :=
@@ -65,8 +73,16 @@ Theorem mul_preserves_invariant : forall a b : DualCoeff,
   a.(dc_modulus) > 0 ->
   dual_invariant (dual_mul a b).
 Proof.
-  (* RNS mul mod m = (exact_a * exact_b) mod m *)
-Admitted.
+  intros a b Ha Hb Hmod Hpos.
+  unfold dual_invariant in *. unfold dual_mul. simpl.
+  (* Ha: a.(dc_rns) = a.(dc_exact) mod a.(dc_modulus) *)
+  (* Hb: b.(dc_rns) = b.(dc_exact) mod b.(dc_modulus) *)
+  (* Goal: (a.(dc_rns) * b.(dc_rns)) mod m = (a.(dc_exact) * b.(dc_exact)) mod m *)
+  rewrite Ha. rewrite Hb. rewrite Hmod.
+  (* Goal: (a.(dc_exact) mod m * b.(dc_exact) mod m) mod m = (a.(dc_exact) * b.(dc_exact)) mod m *)
+  symmetry.
+    apply Nat.Div0.mul_mod.
+Qed.
 
 (** * Exact Division via K-Elimination *)
 

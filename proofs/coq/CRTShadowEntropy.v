@@ -46,8 +46,13 @@ Proof.
   intros a b m Hm.
   unfold shadow, result.
   (* a*b = (a*b/m)*m + (a*b mod m) by Euclidean division *)
-  (* This follows directly from the division algorithm *)
-Admitted.
+  (* Nat.div_mod_eq: n = d * (n / d) + n mod d *)
+  (* We need: a*b = (a*b/m)*m + (a*b mod m) *)
+  set (n := a * b).
+  assert (Heq: n = m * (n / m) + n mod m) by apply Nat.div_mod_eq.
+  rewrite Nat.mul_comm in Heq.
+  exact Heq.
+Qed.
 
 (** * Entropy Bounds *)
 
@@ -58,7 +63,9 @@ Proof.
   intros a b m Hm Ha Hb.
   unfold shadow.
   (* (a*b)/m < m when a,b < m: since a*b < m*m, (a*b)/m < m *)
-Admitted.
+  assert (Hprod: a * b < m * m) by nia.
+    apply Nat.Div0.div_lt_upper_bound; lia.
+Qed.
 
 (** Shadow entropy: log2(shadow_range) bits per operation *)
 Definition shadow_entropy_bits (m : nat) : nat := Nat.log2 m.
@@ -107,8 +114,11 @@ Definition entropy_rate : nat := bits_per_shadow * operations_per_second * chann
 
 Theorem entropy_significant : entropy_rate > 10000.
 Proof.
+  unfold entropy_rate, bits_per_shadow, operations_per_second, channels.
   (* 64 * 60 * 8 = 30720 > 10000 *)
-Admitted.
+  (* Use Nat.ltb_lt to convert to a decidable comparison *)
+  apply Nat.ltb_lt. reflexivity.
+Qed.
 
 (** * Magnitude Comparison *)
 

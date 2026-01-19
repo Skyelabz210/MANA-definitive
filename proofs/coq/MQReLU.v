@@ -79,9 +79,29 @@ Theorem sign_detection_correct : forall q r : nat,
   | Zero => x = 0%Z
   end.
 Proof.
-  (* The proof follows by case analysis on detect_sign result
-     and properties of the threshold convention *)
-Admitted.
+  intros q r Hq Hr.
+  unfold detect_sign, residue_to_signed, threshold.
+  (* Case 1: r = 0 *)
+  destruct (Nat.eqb r 0) eqn:E0.
+  - apply Nat.eqb_eq in E0. subst r.
+    (* For r = 0: Zero case, need x = 0 *)
+    (* x = if 0 <? q/2 then 0 else 0 - q = 0 (since 0 < q/2 when q > 2) *)
+    assert (H02: 0 < q / 2).
+    { apply Nat.div_str_pos. lia. }
+    apply Nat.ltb_lt in H02. rewrite H02. reflexivity.
+  - (* r <> 0 *)
+    apply Nat.eqb_neq in E0.
+    destruct (r <? q / 2) eqn:E1.
+    + (* r < q/2: Positive case *)
+      (* After destruct, the if-then-else is reduced *)
+      (* Goal: (Z.of_nat r > 0)%Z since r > 0 and r < q/2 *)
+      apply Nat.ltb_lt in E1.
+      lia.
+    + (* r >= q/2: Negative case *)
+      (* Goal: (Z.of_nat r - Z.of_nat q < 0)%Z since r < q *)
+      apply Nat.ltb_ge in E1.
+      lia.
+Qed.
 
 (** * ReLU Implementation *)
 
@@ -101,11 +121,37 @@ Theorem mq_relu_correct : forall q r : nat,
   let result_signed := residue_to_signed q result in
   result_signed = Z.max 0 x.
 Proof.
-  (* The proof follows by case analysis:
-     - If r = 0: x = 0, result = 0, max(0,0) = 0
-     - If r < q/2: x = r > 0, result = r, max(0,r) = r
-     - If r >= q/2: x = r - q < 0, result = 0, max(0, x) = 0 *)
-Admitted.
+  intros q r Hq Hr.
+  unfold mq_relu, detect_sign, residue_to_signed, threshold.
+  (* Case analysis on r *)
+  destruct (Nat.eqb r 0) eqn:E0.
+  - (* r = 0: Zero case *)
+    apply Nat.eqb_eq in E0. subst r.
+    (* result = 0, x = 0, max(0,0) = 0 *)
+    assert (H02: 0 < q / 2) by (apply Nat.div_str_pos; lia).
+    destruct (0 <? q / 2) eqn:E1.
+    + reflexivity.
+    + (* Contradiction: H02 says 0 < q/2 but E1 says not *)
+      apply Nat.ltb_ge in E1. lia.
+  - (* r <> 0 *)
+    apply Nat.eqb_neq in E0.
+    destruct (r <? q / 2) eqn:E1.
+    + (* r < q/2: Positive, result = r *)
+      apply Nat.ltb_lt in E1.
+      destruct (r <? q / 2) eqn:E2.
+      * (* Goal: Z.of_nat r = Z.max 0 (Z.of_nat r) *)
+        rewrite Z.max_r; lia.
+      * (* Contradiction *)
+        apply Nat.ltb_ge in E2. lia.
+    + (* r >= q/2: Negative, result = 0 *)
+      apply Nat.ltb_ge in E1.
+      assert (H02: 0 < q / 2) by (apply Nat.div_str_pos; lia).
+      destruct (0 <? q / 2) eqn:E2.
+      * (* x = r - q < 0, max(0, x) = 0 *)
+        rewrite Z.max_l; lia.
+      * (* Contradiction *)
+        apply Nat.ltb_ge in E2. lia.
+Qed.
 
 (** * Leaky ReLU *)
 

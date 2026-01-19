@@ -71,22 +71,55 @@ Proof.
   intros. simpl. reflexivity.
 Qed.
 
+Lemma fold_left_add_acc : forall l acc,
+  fold_left Nat.add l acc = acc + fold_left Nat.add l 0.
+Proof.
+  intros l. induction l as [|h t IH]; intros acc.
+  - simpl. lia.
+  - simpl. rewrite IH. rewrite (IH h). lia.
+Qed.
+
 Lemma sum_probs_cons : forall h t,
   sum_probs (h :: t) = h + sum_probs t.
 Proof.
   intros h t.
   unfold sum_probs.
   simpl.
-  (* Need to prove fold_left Nat.add t h = h + fold_left Nat.add t 0 *)
-Admitted.
+  rewrite fold_left_add_acc. lia.
+Qed.
+
+Lemma sum_add_one : forall l d,
+  d <= length l ->
+  sum_probs (
+    (fix add_one l0 d0 :=
+      match l0, d0 with
+      | [], _ => []
+      | h :: t, 0 => h :: t
+      | h :: t, S d' => (h + 1) :: add_one t d'
+      end) l d
+  ) = sum_probs l + d.
+Proof.
+  intros l. induction l as [|h t IH]; intros d Hd.
+  - (* Base case: l = [] *)
+    simpl in Hd. assert (Hd0: d = 0) by lia. subst d.
+    unfold sum_probs. simpl. reflexivity.
+  - destruct d as [|d'].
+    + simpl. lia.
+    + simpl. rewrite sum_probs_cons. rewrite sum_probs_cons.
+      simpl in Hd. assert (Hd': d' <= length t) by lia.
+      rewrite IH by exact Hd'. lia.
+Qed.
 
 Theorem distribute_maintains_bound : forall probs : list nat, forall target : nat,
   sum_probs probs <= target ->
   target - sum_probs probs <= length probs ->
   sum_probs (distribute_remainder probs target) = target.
 Proof.
-  (* Each deficit unit is added to one element *)
-Admitted.
+  intros probs target Hsum Hdef.
+  unfold distribute_remainder.
+  rewrite sum_add_one by exact Hdef.
+  lia.
+Qed.
 
 (** * Argmax is Preserved *)
 
@@ -164,6 +197,16 @@ Qed.
 Definition is_stable (is : IntSoftmax) : Prop :=
   forall p, In p is.(is_probs) -> p <= is.(is_scale).
 
+Lemma sum_probs_bound : forall l p,
+  In p l -> p <= sum_probs l.
+Proof.
+  intros l. induction l as [|h t IH]; intros p Hin.
+  - inversion Hin.
+  - destruct Hin as [Heq | Hin'].
+    + subst p. rewrite sum_probs_cons. lia.
+    + rewrite sum_probs_cons. specialize (IH p Hin'). lia.
+Qed.
+
 Theorem stability_from_exactness : forall is : IntSoftmax,
   exact_sum is -> is_stable is.
 Proof.
@@ -172,7 +215,9 @@ Proof.
   intros p Hin.
   unfold exact_sum in Hexact.
   (* If sum = scale and all non-negative, each element <= scale *)
-Admitted.
+  assert (Hbound: p <= sum_probs is.(is_probs)) by (apply sum_probs_bound; exact Hin).
+  lia.
+Qed.
 
 (** * Summary *)
 

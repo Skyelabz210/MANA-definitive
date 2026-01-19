@@ -71,7 +71,7 @@ Lemma k_lt_A : forall X M A : nat,
   M > 0 -> X < M * A -> X / M < A.
 Proof.
   intros X M A HM HRange.
-  apply Nat.div_lt_upper_bound; lia.
+    apply Nat.Div0.div_lt_upper_bound; lia.
 Qed.
 
 (** When k < A, k mod A = k *)
@@ -107,10 +107,14 @@ Lemma add_mul_mod : forall a b M : nat,
   M > 0 -> (a + b * M) mod M = a mod M.
 Proof.
   intros a b M HM.
-  (* Standard modular arithmetic: b*M is divisible by M *)
-  (* (a + b*M) mod M = a mod M because b*M mod M = 0 *)
-  (* Coq 8.17+ proof *)
-Admitted.
+    rewrite Nat.Div0.add_mod; try lia.
+    rewrite Nat.Div0.mul_mod; try lia.
+  rewrite Nat.Div0.mod_same; try lia.
+  rewrite Nat.mul_0_r.
+  rewrite Nat.Div0.mod_0_l; try lia.
+  rewrite Nat.add_0_r.
+  apply Nat.Div0.mod_mod.
+Qed.
 
 (** When a < M: (a + b * M) mod M = a *)
 Lemma add_mul_mod_small : forall a b M : nat,
@@ -172,7 +176,7 @@ Proof.
   intros X M HM.
   unfold main_residue, overflow_count.
   rewrite add_mul_mod; try lia.
-  apply Nat.mod_mod. lia.
+  apply Nat.Div0.mod_mod.
 Qed.
 
 (** * Validation Identities *)
@@ -190,7 +194,7 @@ Theorem validation_v2 : forall X M : nat,
 Proof.
   intros X M HM.
   rewrite add_mul_mod; try lia.
-  apply Nat.mod_mod. lia.
+  apply Nat.Div0.mod_mod.
 Qed.
 
 (** V3: Anchor residue consistency (key congruence) *)
@@ -234,7 +238,11 @@ Proof.
   destruct Hdiv as [k Hk].
   subst X.
   (* d * k mod d = 0 *)
-Admitted.
+    rewrite Nat.Div0.mul_mod; try lia.
+  rewrite Nat.Div0.mod_same; try lia.
+  rewrite Nat.mul_0_r.
+  apply Nat.Div0.mod_0_l.
+Qed.
 
 (** Division produces correct quotient and remainder *)
 Theorem division_correct : forall X M : nat,
@@ -263,7 +271,106 @@ Qed.
 
 (** * Soundness *)
 
-(** K-Elimination Soundness: computed k equals true k *)
+(** Auxiliary lemma: phase equals k*M mod A
+
+    The phase differential (v_A + A - v_M mod A) mod A equals (k * M) mod A.
+
+    Proof sketch:
+    1. By division algorithm: X = v_M + k * M
+    2. Therefore: X mod A = (v_M + k * M) mod A = v_A
+    3. The phase = (v_A + A - v_M mod A) mod A
+       = ((v_M + k*M) mod A + A - v_M mod A) mod A
+       = (k * M) mod A
+
+    The +A ensures non-negative before final mod A.
+*)
+
+(** Helper: ((a + b) mod n + n - a) mod n = b mod n when a, b < n *)
+Lemma phase_cancel_helper : forall a b n : nat,
+  n > 0 -> a < n -> b < n ->
+  ((a + b) mod n + n - a) mod n = b.
+Proof.
+  intros a b n Hn Ha Hb.
+  destruct (Nat.lt_ge_cases (a + b) n) as [Hlt | Hge].
+  - (* Case: a + b < n, so (a + b) mod n = a + b *)
+    rewrite (Nat.mod_small (a + b) n Hlt).
+    (* Goal: (a + b + n - a) mod n = b *)
+    replace (a + b + n - a) with (b + n) by lia.
+    (* b + n = 1*n + b, so (b + n) mod n = b *)
+    rewrite Nat.add_comm.
+    rewrite Nat.Div0.add_mod; try lia.
+    rewrite Nat.Div0.mod_same; try lia.
+    rewrite Nat.add_0_l.
+    rewrite Nat.Div0.mod_mod; try lia.
+    apply Nat.mod_small. exact Hb.
+  - (* Case: a + b >= n, and since a, b < n, we have a + b < 2n *)
+    assert (Hab2n : a + b < 2 * n) by lia.
+    (* (a + b) mod n = a + b - n when n <= a + b < 2n *)
+    assert (Hmod : (a + b) mod n = a + b - n).
+    {
+      (* a + b = 1 * n + (a + b - n) and a + b - n < n *)
+      symmetry.
+      apply Nat.mod_unique with (q := 1); lia.
+    }
+    rewrite Hmod.
+    (* Goal: (a + b - n + n - a) mod n = b *)
+    replace (a + b - n + n - a) with b by lia.
+    apply Nat.mod_small. exact Hb.
+Qed.
+
+Lemma phase_equals_k_times_M : forall X M A : nat,
+  M > 0 -> A > 0 -> X < M * A ->
+  let v_M := X mod M in
+  let v_A := X mod A in
+  let k := X / M in
+  let phase := (v_A + A - v_M mod A) mod A in
+  phase = (k * M) mod A.
+Proof.
+  intros X M A HM HA HRange.
+  simpl.
+  (* From division algorithm: X = v_M + k * M *)
+  assert (Hrecon : X = X mod M + (X / M) * M) by (apply div_mod_identity; lia).
+  (* Therefore X mod A = (v_M + k * M) mod A *)
+  assert (HvA : X mod A = (X mod M + (X / M) * M) mod A).
+  { rewrite <- Hrecon. reflexivity. }
+  rewrite HvA.
+  (* Use Nat.add_mod to expand (v_M + k*M) mod A *)
+  rewrite Nat.Div0.add_mod; try lia.
+  (* Goal: ((X mod M mod A + (X / M) * M mod A) mod A + A - X mod M mod A) mod A
+         = (X / M * M) mod A *)
+  (* Let a = X mod M mod A and b = (X / M * M) mod A *)
+  (* Then we need: ((a + b) mod A + A - a) mod A = b *)
+  set (a := X mod M mod A).
+  set (b := (X / M * M) mod A).
+  (* Bounds: a < A and b < A *)
+  assert (Ha : a < A) by (unfold a; apply Nat.mod_upper_bound; lia).
+  assert (Hb : b < A) by (unfold b; apply Nat.mod_upper_bound; lia).
+  (* Apply the helper lemma *)
+  apply phase_cancel_helper; assumption.
+Qed.
+
+(** Key lemma: (a mod n * b) mod n = (a * b) mod n *)
+Lemma mul_mod_idemp : forall a b n : nat,
+  n > 0 -> (a mod n * b) mod n = (a * b) mod n.
+Proof.
+  intros a b n Hn.
+    rewrite Nat.Div0.mul_mod; try lia.
+  rewrite Nat.Div0.mod_mod; try lia.
+    rewrite <- Nat.Div0.mul_mod; lia.
+Qed.
+
+(** K-Elimination Soundness: computed k equals true k
+
+    Given:
+    - M, A coprime (M * M_inv mod A = 1)
+    - X in range [0, M*A)
+
+    We compute k via:
+    1. phase = (v_A + A - v_M mod A) mod A = (k * M) mod A
+    2. k_computed = (phase * M_inv) mod A = (k * M * M_inv) mod A = k
+
+    This is the MAIN theorem. Fully proven in Lean 4.
+*)
 Theorem k_elimination_sound : forall X M A M_inv : nat,
   M > 0 -> A > 1 -> X < M * A ->
   (M * M_inv) mod A = 1 ->
@@ -280,27 +387,26 @@ Proof.
   assert (Hk_lt : X / M < A) by (apply k_lt_A; lia).
   (* k_true mod A = k_true *)
   assert (Hk_mod : (X / M) mod A = X / M) by (apply Nat.mod_small; exact Hk_lt).
-  (* From the key congruence and inverse property *)
-  (* X mod A = (X mod M + k * M) mod A *)
-  (* So: X mod A - X mod M mod A = k * M mod A *)
-  (* Therefore: (X mod A + A - X mod M mod A) mod A * M_inv mod A = k *)
-  (* This follows from modular arithmetic with M_inv being the inverse of M mod A *)
-
-  (* The full proof requires showing:
-     phase * M_inv mod A = k
-     where phase = (v_A + A - v_M mod A) mod A
-
-     Since X = v_M + k * M (by division algorithm)
-     We have X mod A = (v_M + k * M) mod A
-     So v_A = (v_M + k * M) mod A
-
-     The phase difference (v_A - v_M) mod A = (k * M) mod A
-     Multiplying by M_inv: ((k * M) mod A * M_inv) mod A = k mod A = k
-  *)
-
-  (* This proof is admitted as it requires extensive modular arithmetic
-     machinery that parallels the Lean 4 proof structure *)
-Admitted.
+  (* phase = (k * M) mod A - from auxiliary lemma *)
+  assert (Hphase : (X mod A + A - X mod M mod A) mod A = ((X / M) * M) mod A).
+  { apply phase_equals_k_times_M; lia. }
+  rewrite Hphase.
+  (* Goal: ((X / M * M) mod A * M_inv) mod A = X / M *)
+  (* Step 1: Use mul_mod_idemp to simplify left side *)
+  rewrite mul_mod_idemp; try lia.
+  (* Goal: (X / M * M * M_inv) mod A = X / M *)
+  (* Step 2: Reassociate multiplication: (a * b) * c -> a * (b * c) *)
+  rewrite <- Nat.mul_assoc.
+  (* Goal: (X / M * (M * M_inv)) mod A = X / M *)
+  (* Step 3: Use modular multiplication property *)
+    rewrite Nat.Div0.mul_mod; try lia.
+  rewrite HMinv.
+  (* Goal: (X / M mod A * 1) mod A = X / M *)
+  rewrite Nat.mul_1_r.
+  (* Goal: (X / M mod A) mod A = X / M *)
+  rewrite Hk_mod.
+  apply Nat.mod_small. exact Hk_lt.
+Qed.
 
 (** K-Elimination Completeness: reconstruction recovers correct k *)
 Theorem k_elimination_complete : forall k v_M M A : nat,
@@ -311,8 +417,11 @@ Proof.
   intros k v_M M A HM Hv Hk.
   simpl.
   (* (v_M + k * M) / M = k when v_M < M *)
-  (* Standard result: v_M / M = 0, k*M/M = k *)
-Admitted.
+  (* Nat.div_add: (a + b * c) / c = a / c + b *)
+  rewrite Nat.div_add; try lia.
+  (* v_M / M = 0 since v_M < M *)
+  rewrite Nat.div_small; try lia.
+Qed.
 
 (** * Error Taxonomy *)
 
