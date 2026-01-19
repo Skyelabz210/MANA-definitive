@@ -33,7 +33,8 @@ Open Scope nat_scope.
    Guarantee: Σp_i = denominator exactly
 *)
 
-Definition scale_factor : nat := 65536.  (* 2^16 *)
+(** Power of 2 to avoid large literals *)
+Definition scale_factor : nat := 2^16.  (* 65536 = 2^16, computed structurally *)
 
 Record IntSoftmax := {
   is_probs : list nat;

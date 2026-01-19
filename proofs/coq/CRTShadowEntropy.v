@@ -112,9 +112,19 @@ Definition channels : nat := 8.
 
 Definition entropy_rate : nat := bits_per_shadow * operations_per_second * channels.
 
-Theorem entropy_significant : entropy_rate > 10000.
+(** Power of 10 to avoid large literals *)
+Fixpoint pow10_crt (n : nat) : nat :=
+  match n with
+  | 0 => 1
+  | S n' => 10 * pow10_crt n'
+  end.
+
+(** 10^4 = 10000 *)
+Definition ten_k : nat := pow10_crt 4.
+
+Theorem entropy_significant : entropy_rate > ten_k.
 Proof.
-  unfold entropy_rate, bits_per_shadow, operations_per_second, channels.
+  unfold entropy_rate, bits_per_shadow, operations_per_second, channels, ten_k, pow10_crt.
   (* 64 * 60 * 8 = 30720 > 10000 *)
   (* Use Nat.ltb_lt to convert to a decidable comparison *)
   apply Nat.ltb_lt. reflexivity.

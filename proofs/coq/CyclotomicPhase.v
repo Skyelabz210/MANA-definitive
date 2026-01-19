@@ -63,7 +63,7 @@ Proof.
   - (* n even: n = 2k, (n+1)/2 = k, n/2 = k, sum = 2k = n *)
     rewrite Heven in Hdiv. rewrite Nat.add_0_r in Hdiv.
     assert (Hmod1: (n + 1) mod 2 = 1).
-    { rewrite Nat.add_mod; try lia. rewrite Heven. simpl. reflexivity. }
+    { rewrite Nat.Div0.add_mod. rewrite Heven. simpl. reflexivity. }
     rewrite Hmod1 in Hdiv1.
     (* n+1 = 2*((n+1)/2) + 1, so (n+1)/2 = n/2 *)
     assert (H1: (n + 1) / 2 = n / 2).
@@ -72,7 +72,7 @@ Proof.
   - (* n odd: n = 2k+1, (n+1)/2 = k+1, n/2 = k, sum = 2k+1 = n *)
     rewrite Hodd in Hdiv.
     assert (Hmod1: (n + 1) mod 2 = 0).
-    { rewrite Nat.add_mod; try lia. rewrite Hodd. simpl. reflexivity. }
+    { rewrite Nat.Div0.add_mod. rewrite Hodd. simpl. reflexivity. }
     rewrite Hmod1 in Hdiv1. rewrite Nat.add_0_r in Hdiv1.
     (* n+1 = 2*((n+1)/2), n = 2*(n/2)+1 *)
     (* (n+1)/2 = (n+1)/2, n/2 = (n-1)/2 *)

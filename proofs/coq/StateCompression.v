@@ -157,9 +157,20 @@ Definition compression_ratio_product (n : nat) : nat :=
 (** Compression ratio > 10000 for 20 qubits *)
 (** Mathematical fact: 2^20 * 16 / 64 = 2^18 > 10000 *)
 (** This follows from 2^18 = 2^14 * 2^4 = 16384 * 16 = 262144 > 10000 *)
-Theorem sparse_20_compression : compression_ratio_sparse 20 > 10000.
+
+(** Power of 10 to avoid large number literals *)
+Fixpoint pow10_sc (n : nat) : nat :=
+  match n with
+  | 0 => 1
+  | S n' => 10 * pow10_sc n'
+  end.
+
+(** 10^4 = 10000 *)
+Definition ten_thousand : nat := pow10_sc 4.
+
+Theorem sparse_20_compression : compression_ratio_sparse 20 > ten_thousand.
 Proof.
-  unfold compression_ratio_sparse, skm_traditional_storage, skm_sparse_storage.
+  unfold compression_ratio_sparse, skm_traditional_storage, skm_sparse_storage, ten_thousand, pow10_sc.
   (* Direct computation shows 2^20 * 16 / 64 = 262144 > 10000 *)
   (* Admitted as numerical fact - verifiable by computation *)
 Admitted.
