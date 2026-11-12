@@ -1,3 +1,14 @@
+(** Scope clarification, 2026-11-12.
+    This historical file bounds an abstract NoiseEstimate whose collapse
+    resets distance to zero. It does not prove a ciphertext refresh operation,
+    decryption preservation, or current CRAM architecture conformance.
+    Current intent derives K on demand at each winding and preserves
+    heterogeneous phase-locked residue/anchor trays. Garner synthetic emission
+    is retired; declared reconstruction is not categorically forbidden.
+    Full intended invariants and source-bound evidence:
+    https://github.com/Skyelabz210/qmnf-lean-coq-security-proofs/blob/main/docs/CRAM_INTENT_AND_PROOF_SCOPE.md
+*)
+
 (** GSO-FHE: Bootstrap-Free Noise Bounding
 
     Gravitational Swarm Optimization for FHE

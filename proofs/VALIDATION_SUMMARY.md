@@ -1,5 +1,21 @@
 # NINE65 Formal Validation Summary
 
+## Scope clarification (2026-11-12)
+
+This is a historical report. Current intended CRAM invariants require K to be
+derived on demand at each winding, residue-native division and magnitude
+observables, and heterogeneous phase-locked CRT trays. Garner/mixed-radix
+synthetic emission is retired from residue compute; reconstruction under an
+explicit operation contract is permitted. See the
+[shared intent and proof-scope record](https://github.com/Skyelabz210/qmnf-lean-coq-security-proofs/blob/main/docs/CRAM_INTENT_AND_PROOF_SCOPE.md).
+
+Compilation does not discharge admitted goals or axioms, validate a runtime
+implementation, or establish security/performance claims. In particular, the
+GSO noise-counter bound is not a ciphertext-refresh proof. Depth-50 results must
+retain their trusted/symmetric mode and parameter scope. The historical report
+below is preserved; this notice qualifies broader completion language.
+
+
 **Status**: All 13 Coq Proofs Compile Successfully
 **Date**: January 2026
 **Research**: HackFate.us
